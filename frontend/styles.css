@@ -1,1 +1,70 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+}
 
+/* Header */
+.dashboard-header {
+    background: linear-gradient(to right, #FFD700, #1E3A8A);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+}
+
+.dashboard-header nav a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.dashboard-header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard cards */
+.dashboard-main {
+    padding: 2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    color: #1E3A8A;
+}
+
+.card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Footer */
+.dashboard-footer {
+    background-color: #1E3A8A;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
