@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HKSAI Donor Tracking System">
+    <meta name="description" content="Hope for Kenya Slum Adolescents Initiative (HKSAI) Management System">
     <meta name="author" content="HKSAI Team">
-    <title>HKSAI Donor Tracking</title>
+    <title>HKSAI Management System</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f2f5; }
@@ -13,83 +13,87 @@
         nav { background: #2563EB; padding: 0.5rem; text-align: center; }
         nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
         nav a:hover { text-decoration: underline; }
-        main { padding: 2rem; }
-        .dashboard-cards { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
-        .card { flex: 1; min-width: 150px; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+        main { padding: 2rem; max-width: 1200px; margin: auto; }
+        section { margin-bottom: 3rem; }
+        h2 { color: #1E3A8A; margin-bottom: 1rem; }
+        p { color: #333; font-size: 1.1rem; line-height: 1.6; }
+        .cards { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .card { flex: 1; min-width: 250px; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
         .card h3 { margin-bottom: 0.5rem; color: #1E3A8A; }
-        table { width: 100%; border-collapse: collapse; margin-top: 1rem; background: white; border-radius: 8px; overflow: hidden; }
-        table, th, td { border: 1px solid #ccc; }
-        th, td { padding: 0.5rem; text-align: left; }
-        .button { padding: 0.5rem 1rem; background: #2563EB; color: white; border: none; cursor: pointer; border-radius: 5px; }
-        .button:hover { background: #1D4ED8; }
         footer { text-align: center; padding: 1rem; background: #1E3A8A; color: white; margin-top: 2rem; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hope for Kenya Slums Adolescents Initiative (HKSAI) Management Systems</h1>
+        <h1>Hope for Kenya Slum Adolescents Initiative (HKSAI)</h1>
     </header>
 
     <nav>
-    <a href="frontend/dashboard.html">Dashboard</a>
-    <a href="frontend/projects.html">Donors</a>
-    <a href="frontend/donate.html">Donations</a>
-    <a href="frontend/contact.html">Reports</a>
-</nav>
+        <a href="frontend/dashboard.html">Dashboard</a>
+        <a href="frontend/projects.html">Projects</a>
+        <a href="frontend/donate.html">Donate</a>
+        <a href="frontend/contact.html">Contact</a>
+    </nav>
 
     <main>
-        <!-- Dashboard summary cards -->
-        <section class="dashboard-cards">
+        <!-- Welcome / Intro -->
+        <section class="intro">
+            <h2>Welcome to HKSAI</h2>
+            <p>HKSAI empowers adolescents living in Kenya’s informal settlements through education, health programs, skills training, and community advocacy. Join us in creating a brighter future for young people.</p>
+        </section>
+
+        <!-- Vision & Mission -->
+        <section class="cards">
             <div class="card">
-                <h3>Active Projects</h3>
-                <p>12</p>
+                <h3>Vision</h3>
+                <p>A society where inspired young people lead independent, dignified, and healthy lives.</p>
             </div>
             <div class="card">
-                <h3>Total Donations</h3>
-                <p>$15,400</p>
-            </div>
-            <div class="card">
-                <h3>Volunteers</h3>
-                <p>85</p>
-            </div>
-            <div class="card">
-                <h3>Upcoming Events</h3>
-                <p>3</p>
+                <h3>Mission</h3>
+                <p>To advance education, health, and socioeconomic opportunities that empower adolescents and youths in Kenya’s informal settlements.</p>
             </div>
         </section>
 
-        <h2>Recent Donations</h2>
-        <button class="button">Add Donation</button>
+        <!-- Core Values -->
+        <section>
+            <h2>Our Values</h2>
+            <div class="cards">
+                <div class="card"><h3>Humanity</h3><p>We act with compassion to improve lives.</p></div>
+                <div class="card"><h3>Excellence</h3><p>We deliver high-quality programs and services.</p></div>
+                <div class="card"><h3>Integrity</h3><p>We uphold transparency, honesty, and accountability.</p></div>
+                <div class="card"><h3>Respect</h3><p>We value every individual and community we serve.</p></div>
+                <div class="card"><h3>Professionalism</h3><p>We maintain high standards in all our operations.</p></div>
+                <div class="card"><h3>Fairness</h3><p>We treat everyone equitably and justly.</p></div>
+            </div>
+        </section>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Donor Name</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Purpose</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Jane Doe</td>
-                    <td>$150</td>
-                    <td>2025-12-01</td>
-                    <td>School Supplies</td>
-                </tr>
-                <tr>
-                    <td>John Smith</td>
-                    <td>$200</td>
-                    <td>2025-12-05</td>
-                    <td>Medical Aid</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Programs -->
+        <section>
+            <h2>Our Programs</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Education Support</h3>
+                    <p>Providing mentorship, tuition support, and learning resources to adolescents.</p>
+                </div>
+                <div class="card">
+                    <h3>Health Programs</h3>
+                    <p>Promoting adolescent health, menstrual hygiene, and awareness initiatives.</p>
+                </div>
+                <div class="card">
+                    <h3>Skills & Empowerment</h3>
+                    <p>Vocational training, digital literacy, and entrepreneurship support.</p>
+                </div>
+                <div class="card">
+                    <h3>Advocacy & Community</h3>
+                    <p>Strengthening community structures and influencing policy for adolescent rights.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        &copy; 2025 HKSAI. All rights reserved.
+        &copy; 2025 HKSAI. All Rights Reserved. <br>
+        <a href="https://www.hopeksai.org" style="color:white; text-decoration: underline;">www.hopeksai.org</a>
     </footer>
 </body>
 </html>
-
