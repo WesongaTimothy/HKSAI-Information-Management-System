@@ -3,11 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple HTML page to display a message.">
-    <meta name="author" content="Timothy Wesonga">
-    <title>Display Message</title>
+    <meta name="description" content="HKSAI Donor Tracking System">
+    <meta name="author" content="HKSAI Team">
+    <title>HKSAI Donor Tracking</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f2f5; }
+        header { background: #1E3A8A; color: white; padding: 1rem; text-align: center; }
+        nav { background: #2563EB; padding: 0.5rem; }
+        nav a { color: white; margin: 0 1rem; text-decoration: none; }
+        main { padding: 2rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 0.5rem; text-align: left; }
+        .button { padding: 0.5rem 1rem; background: #2563EB; color: white; border: none; cursor: pointer; }
+        .button:hover { background: #1D4ED8; }
+    </style>
 </head>
 <body>
-    <h1 id="message">Hello! This is your message.</h1>
+    <header>
+        <h1>HKSAI Donor Tracking System</h1>
+    </header>
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Donors</a>
+        <a href="#">Donations</a>
+        <a href="#">Reports</a>
+    </nav>
+    <main>
+        <h2>Recent Donations</h2>
+        <button class="button">Add Donation</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Donor Name</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jane Doe</td>
+                    <td>$150</td>
+                    <td>2025-12-01</td>
+                    <td>School Supplies</td>
+                </tr>
+                <tr>
+                    <td>John Smith</td>
+                    <td>$200</td>
+                    <td>2025-12-05</td>
+                    <td>Medical Aid</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 </body>
 </html>
