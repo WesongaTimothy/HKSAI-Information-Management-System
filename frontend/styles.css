@@ -154,3 +154,192 @@ nav a:hover, nav a.active {
   font-size: 0.9rem;
   margin-top: 10px;
 }
+
+/* Color Palette */
+:root {
+  --maroon: #800000;
+  --gold: #D4AF37;
+  --white: #ffffff;
+  --text-dark: #2d2d2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Background Image Setup */
+body.bg-image {
+  background: url('../frontend/H1.jpeg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Glassmorphism Wrapper for readability */
+.glass-wrapper {
+  background: rgba(255, 255, 255, 0.88); /* Makes background images blur slightly and keeps text readable */
+  backdrop-filter: blur(5px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.main-header {
+  background: var(--maroon);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  color: var(--white);
+}
+
+.site-url {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--gold);
+}
+
+.gold-line {
+  height: 4px;
+  background: var(--gold);
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  color: var(--maroon);
+  margin-bottom: 15px;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Grid & Cards */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px 5%;
+  flex: 1;
+}
+
+.donation-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  border-bottom: 3px solid var(--maroon);
+}
+
+.donation-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+.card-body h3 {
+  color: var(--maroon);
+  margin-bottom: 10px;
+}
+
+.goal-tag {
+  background: #fdf5e6;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin: 15px 0;
+  display: inline-block;
+  color: var(--text-dark);
+}
+
+.donate-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--maroon);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.donate-btn:hover {
+  background: #5a0000;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.3);
+}
+
+/* Footer Styles */
+.main-footer {
+  background: var(--maroon);
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer-content {
+  padding: 40px 20px;
+}
+
+.org-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.mission-tags {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav a {
+    margin: 0 10px;
+  }
+}
