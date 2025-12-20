@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HKSAI Donor Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">HKSAI</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="donate.html">Donate</a>
+      <a href="donor-dashboard.html" class="active">My Donations</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="logout">Logout</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Welcome, Valued Donor 💙</h1>
+    <p>Your generosity supports education, health, and youth empowerment in Kenyan slums.</p>
+  </section>
+
+  <!-- DASHBOARD STATS -->
+  <section class="stats">
+    <div class="card">
+      <h3>Active Projects</h3>
+      <p class="number">12</p>
+    </div>
+    <div class="card">
+      <h3>Total Donated</h3>
+      <p class="number">KES 15,400</p>
+    </div>
+    <div class="card">
+      <h3>Lives Impacted</h3>
+      <p class="number">85+</p>
+    </div>
+    <div class="card">
+      <h3>Upcoming Events</h3>
+      <p class="number">3</p>
+    </div>
+  </section>
+
+  <!-- DONATION HISTORY -->
+  <section class="donations">
+    <h2>My Donation History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Project</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Receipt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12 Jan 2025</td>
+          <td>Slum Education Fund</td>
+          <td>KES 5,000</td>
+          <td class="success">Successful</td>
+          <td><a href="#">Download</a></td>
+        </tr>
+        <tr>
+          <td>02 Feb 2025</td>
+          <td>Community Health Camp</td>
+          <td>KES 3,000</td>
+          <td class="success">Successful</td>
+          <td><a href="#">Download</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Support Another Project</h2>
+    <p>Your continued support helps us reach more children and families.</p>
+    <a href="donate.html" class="btn">Donate Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Hope for Kenya Slum Adolescents Initiatives (HKSAI). All rights reserved.</p>
+    <p class="tagline">* Transparency • Accountability • Community Impact</p>
+  </footer>
+
+</body>
+</html>
