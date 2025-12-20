@@ -196,6 +196,144 @@ nav a:hover, nav a.active {
     background: var(--maroon-dark);
 }
 
+/* HKSAI PROJECTS INTERFACE 
+   Theme: Professional NGO / Impact-Driven
+   Color Palette: Maroon (#800000) | Gold (#D4AF37)
+*/
+
+/* 1. Page Header & Intro */
+.projects-hero {
+    text-align: center;
+    padding: 80px 10% 40px;
+}
+
+.projects-hero h1 {
+    font-size: 3.2rem;
+    color: var(--maroon);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.projects-hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 2. Project Grid Layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex: 1 0 auto;
+}
+
+/* 3. Enhanced Project Card Design */
+.donation-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.donation-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(128, 0, 0, 0.15);
+}
+
+/* Image with Gold Branding line */
+.card-img {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-bottom: 6px solid var(--gold);
+}
+
+/* 4. Card Body Content */
+.card-body {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    color: var(--maroon);
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.card-body p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* 5. Impact Badges (Data Visualization) */
+.impact-badge {
+    margin-top: auto;
+    background: var(--gold-light);
+    color: var(--maroon);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gold);
+    transition: background 0.3s ease;
+}
+
+.donation-card:hover .impact-badge {
+    background: var(--gold);
+    color: var(--white);
+}
+
+/* 6. Action Button */
+.donate-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    background: var(--maroon);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.donate-btn:hover {
+    background: var(--maroon-dark);
+    box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+}
+
+/* 7. Mobile Optimization */
+@media (max-width: 768px) {
+    .projects-hero h1 {
+        font-size: 2.2rem;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+    }
+}
+
+
 /* 7. Footer (Fixed to base) */
 .main-footer {
     background: var(--maroon);
