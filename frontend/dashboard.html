@@ -1,28 +1,252 @@
-    <div class="glass-wrapper">
-  <section class="hero-section">
-    <h1>Welcome back, Supporter</h1>
-    <p>Your total contribution to date: <strong>KES 25,500</strong></p>
-  </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Initiatives | HKSAI 2025 Impact</title>
+    <style>
+        /* --- BRAND IDENTITY VARIABLES --- */
+        :root {
+            --maroon: #800000;
+            --maroon-dark: #600000;
+            --gold: #D4AF37;
+            --gold-light: #fdf8e6;
+            --white: #ffffff;
+            --text-muted: #555555;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+        }
 
-  <main class="content-grid">
-    <div class="donation-card" style="grid-column: 1 / -1;">
-      <div class="card-body">
-        <h3>Your Donation History</h3>
-        <table style="width:100%; border-collapse: collapse; margin-top: 20px;">
-          <tr style="border-bottom: 2px solid var(--gold); text-align: left;">
-            <th style="padding: 10px;">Date</th>
-            <th>Project</th>
-            <th>Amount</th>
-            <th>Status</th>
-          </tr>
-          <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 10px;">12 Dec 2024</td>
-            <td>Slum Education Fund</td>
-            <td>KES 5,000</td>
-            <td style="color: green;">✔ Verified</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </main>
+        /* --- GLOBAL & LAYOUT --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: #333;
+            /* Using H1.jpeg as the background with a dark overlay */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('H1.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .glass-wrapper {
+            max-width: 1300px;
+            margin: 40px auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- NAVIGATION --- */
+        .main-header {
+            background: var(--maroon);
+            padding: 20px 5%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-url { color: var(--gold); font-weight: bold; }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
+
+        /* --- HERO & RIBBON --- */
+        .hero-projects {
+            text-align: center;
+            padding: 60px 10%;
+        }
+
+        .hero-projects h1 {
+            font-size: 3rem;
+            color: var(--maroon);
+            margin-bottom: 10px;
+        }
+
+        .impact-summary-ribbon {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .ribbon-item {
+            background: var(--white);
+            padding: 20px 10px;
+            border-radius: 12px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .ribbon-item strong {
+            display: block;
+            font-size: 1.6rem;
+            color: var(--maroon);
+        }
+
+        /* --- ACHIEVEMENTS GRID --- */
+        .achievements-section {
+            padding: 40px 5%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 6px solid var(--maroon);
+            transition: 0.3s;
+        }
+
+        .achievement-card:hover { transform: translateY(-5px); }
+        .achievement-card h4 { color: var(--maroon); margin: 10px 0; }
+
+        /* --- INITIATIVES CARDS --- */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 40px 5%;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-media {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .project-info { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-info h3 { color: var(--maroon); margin-bottom: 15px; }
+        .impact-stat {
+            margin-top: auto;
+            background: var(--gold-light);
+            color: var(--maroon);
+            padding: 10px;
+            border-radius: 50px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid var(--gold);
+        }
+
+        footer {
+            background: var(--maroon);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="glass-wrapper">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="site-url">HOPE KSAI</div>
+            <nav>
+                <a href="projects.html" class="active">Our Initiatives</a>
+                <a href="donate.html">Support Us</a>
+                <a href="dashboard.html">My Impact</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-projects">
+        <h1>Transforming Urban Settlements</h1>
+        <p>HKSAI's 2025 roadmap focuses on scaling our 360° approach to reach 550 girls by 2030.</p>
+        
+        <div class="impact-summary-ribbon">
+            <div class="ribbon-item"><strong>197</strong> Scholars Enrolled</div>
+            <div class="ribbon-item"><strong>20,000</strong> Pads Yearly</div>
+            <div class="ribbon-item"><strong>10,000</strong> SRHR Trainees</div>
+            <div class="ribbon-item"><strong>21</strong> TVET Students</div>
+            <div class="ribbon-item"><strong>85+</strong> Youth Businesses</div>
+            <div class="ribbon-item"><strong>100%</strong> Mentorship</div>
+        </div>
+    </section>
+
+    <section class="achievements-section">
+        <h2 style="text-align:center; color: var(--maroon);">What We Have Done in 2025</h2>
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <h4>Uasin Gishu County</h4>
+                <p>HKSAI volunteer elected as Chairperson for Health thematic. Mentorship provided to 107 students and sanitary products distributed to vulnerable girls in Kiboswa.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Nairobi (Kibera)</h4>
+                <p>21 students are currently undertaking Computer Operations and Beauty courses at our SCRA Training Centre in Laini Saba to bridge the digital divide.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Health & Mentorship</h4>
+                <p>Distributed 20,000 pads to promote dignity and school retention. Mental health workshops conducted on social media pressure and self-care.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="projects-container">
+        <article class="project-card">
+            <div class="project-media" style="background-image: url('H1.jpeg');"></div>
+            <div class="project-info">
+                <h3>Academic Scholarship</h3>
+                <p>We provide full kits (tuition, books, shoes, and uniforms) to eliminate barriers for bright and needy students in informal settlements.</p>
+                <div class="impact-stat">197 / 550 Goal Progress</div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-media" style="background-image: url('H2.jpg');"></div>
+            <div class="project-info">
+                <h3>SRHR & Advocacy</h3>
+                <p>Training thousands of girls annually on reproductive rights and advocating against gender-based violence and early marriages.</p>
+                <div class="impact-stat">10,000 Girls Reached</div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-media" style="background-image: url('H1.jpeg');"></div>
+            <div class="project-info">
+                <h3>HEEP & WEDU Projects</h3>
+                <p>Economic empowerment through youth business support and vocational training. To date, 85+ entrepreneurs have been empowered.</p>
+                <div class="impact-stat">Social Entrepreneurship</div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2025 Hope for Kenya Slum Adolescents Initiatives (HKSAI). All rights reserved.</p>
+    </footer>
 </div>
+
+</body>
+</html>
