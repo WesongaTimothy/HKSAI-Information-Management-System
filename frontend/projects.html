@@ -1,10 +1,147 @@
-<main class="projects-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Initiatives | HKSAI</title>
+  <style>
+    /* --- BRAND VARIABLES --- */
+    :root {
+      --maroon: #800000;
+      --maroon-dark: #600000;
+      --gold: #D4AF37;
+      --gold-light: #fdf8e6;
+      --white: #ffffff;
+      --text-muted: #555555;
+      --bg-blur: rgba(255, 255, 255, 0.8);
+    }
+
+    /* --- GLOBAL STYLES --- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* 1. Page Header & Intro */
+    .hero-projects {
+      text-align: center;
+      padding: 80px 10% 40px;
+      background: var(--white);
+    }
+
+    .hero-projects h1 {
+      font-size: 3.2rem;
+      color: var(--maroon);
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero-projects p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* 2. Main Grid Layout */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      padding: 40px 5% 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* 3. Enhanced Project Card Design */
+    .project-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px rgba(128, 0, 0, 0.15);
+    }
+
+    /* 4. Media Area (Images) */
+    .project-media {
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border-bottom: 6px solid var(--gold);
+    }
+
+    /* 5. Info Area */
+    .project-info {
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-info h3 {
+      color: var(--maroon);
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .project-info p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    /* 6. Impact Statistics */
+    .impact-stat {
+      margin-top: auto; 
+      background: var(--gold-light);
+      color: var(--maroon);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover .impact-stat {
+      background: var(--gold);
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero-projects">
+    <h1>Our Core Initiatives</h1>
+    <p>HKSAI implements sustainable programs designed to address the unique challenges faced by adolescents in urban settlements through a holistic 360° approach.</p>
+  </section>
+
+  
+  <main class="projects-container">
+
     <article class="project-card">
         <div class="project-media" style="background-image: url('H1.jpeg');"></div>
         <div class="project-info">
             <h3>Academic Scholarship Program</h3>
-            <p>Using a 360° approach, we provide tuition, books, uniforms, and shoes to eliminate financial barriers for bright and needy students[cite: 45, 46].</p>
-            <div class="impact-stat">197 Girls Enrolled as of 2025 [cite: 50]</div>
+            <p>Using a 360° approach, we provide tuition, books, uniforms, and shoes to eliminate financial barriers for bright and needy students.</p>
+            <div class="impact-stat">197 Girls Enrolled as of 2025</div>
         </div>
     </article>
 
@@ -12,8 +149,8 @@
         <div class="project-media" style="background-image: url('H2.jpg');"></div>
         <div class="project-info">
             <h3>HKSAI Training Centre (TVET)</h3>
-            <p>Located in Kibera, Laini Saba, offering Beauty, Hairdressing, and Computer Operations to provide job-ready skills[cite: 88, 89].</p>
-            <div class="impact-stat">Goal: 300 Graduates by 2030 [cite: 58]</div>
+            <p>Located in Kibera, Laini Saba, offering Beauty, Hairdressing, and Computer Operations to provide job-ready skills.</p>
+            <div class="impact-stat">Goal: 300 Graduates by 2030</div>
         </div>
     </article>
 
@@ -21,8 +158,8 @@
         <div class="project-media" style="background-image: url('H1.jpeg');"></div>
         <div class="project-info">
             <h3>Menstrual Health & Hygiene</h3>
-            <p>Breaking period stigma and promoting dignity through professional health talks and distribution of hygiene kits[cite: 100, 101].</p>
-            <div class="impact-stat">20,000 Pads Distributed Yearly [cite: 100]</div>
+            <p>Breaking period stigma and promoting dignity through professional health talks and distribution of hygiene kits.</p>
+            <div class="impact-stat">20,000 Pads Distributed Yearly</div>
         </div>
     </article>
 
@@ -30,8 +167,8 @@
         <div class="project-media" style="background-image: url('H2.jpg');"></div>
         <div class="project-info">
             <h3>Economic Empowerment (WEDU)</h3>
-            <p>Providing social entrepreneurial support, vocational skills, and resources for youth to launch small businesses[cite: 82, 83].</p>
-            <div class="impact-stat">WEDU & SCRA Projects Active [cite: 55]</div>
+            <p>Providing social entrepreneurial support, vocational skills, and resources for youth to launch small businesses.</p>
+            <div class="impact-stat">WEDU & SCRA Projects Active</div>
         </div>
     </article>
 
@@ -39,8 +176,8 @@
         <div class="project-media" style="background-image: url('H1.jpeg');"></div>
         <div class="project-info">
             <h3>SRHR & Advocacy</h3>
-            <p>Promoting sexual rights and advocating against gender-based violence, early marriages, and harmful cultural practices[cite: 112].</p>
-            <div class="impact-stat">10,000 Girls Trained Annually [cite: 111]</div>
+            <p>Promoting sexual rights and advocating against gender-based violence, early marriages, and harmful cultural practices.</p>
+            <div class="impact-stat">10,000 Girls Trained Annually</div>
         </div>
     </article>
 
@@ -48,8 +185,12 @@
         <div class="project-media" style="background-image: url('H2.jpg');"></div>
         <div class="project-info">
             <h3>Mental Health & Counseling</h3>
-            <p>Safe spaces for youth to discuss trauma, mental health stigma, and coping strategies for school and relationships[cite: 107, 109].</p>
-            <div class="impact-stat">Professional Support System [cite: 108]</div>
+            <p>Safe spaces for youth to discuss trauma, mental health stigma, and coping strategies for school and relationships.</p>
+            <div class="impact-stat">Professional Support System</div>
         </div>
     </article>
-</main>
+
+  </main>
+
+</body>
+</html>
