@@ -3,65 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate - HKSAI</title>
+  <title>Empower Change | Donate to HKSAI</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <header class="dashboard-header">
-    <h1>HKSAI</h1>
+    <div class="logo">HKSAI</div>
     <nav>
-      <a href="projects.html">Projects</a>
-      <a href="donate.html" class="active">Donate</a>
-      <a href="donor-dashboard.html">My Donations</a>
+      <a href="projects.html">Our Initiatives</a>
+      <a href="donate.html" class="active">Support Us</a>
+      <a href="donor-dashboard.html">Impact Dashboard</a>
       <a href="contact.html">Contact</a>
-      <a href="login.html" class="logout">Logout</a>
+      <a href="login.html" class="logout-btn">Logout</a>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Support a Project Today </h1>
-    <p>Your generosity transforms lives in Kenyan slums through education, health, and youth empowerment.</p>
-  </section>
+  <div class="content-overlay">
+    
+    <section class="hero">
+      <h1>Invest in Potential</h1>
+      <p>Every contribution directly fuels our mission to provide education, healthcare, and sustainable empowerment to adolescents in Kenya’s underserved urban settlements.</p>
+    </section>
 
-  <!-- PROJECT CARDS -->
-  <main class="dashboard-main">
-    <div class="cards">
+    <main class="dashboard-main">
+      <div class="cards-grid">
 
-      <div class="card">
-        <img src="../frontend/H1.jpeg" alt="Slum Education Fund" style="width:100%; border-radius:8px;">
-        <h2>Slum Education Fund</h2>
-        <p>Help provide school supplies and tuition for children in underserved areas.</p>
-        <p><strong>Goal:</strong> KES 100,000</p>
-        <a href="#" class="btn">Donate Now</a>
+        <div class="card">
+          <div class="card-image" style="background-image: url('../frontend/H1.jpeg');"></div>
+          <div class="card-content">
+            <h2>Slum Education Fund</h2>
+            <p>Removing financial barriers to education by covering tuition and providing essential learning materials.</p>
+            <div class="goal-bar">
+              <span class="goal-label">Goal: <strong>KES 100,000</strong></span>
+            </div>
+            <a href="#" class="btn-primary">Contribute Now</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image" style="background-image: url('../frontend/H2.jpg');"></div>
+          <div class="card-content">
+            <h2>Community Health Camp</h2>
+            <p>Bringing specialized medical care and preventive health screenings directly to the heart of the community.</p>
+            <div class="goal-bar">
+              <span class="goal-label">Goal: <strong>KES 80,000</strong></span>
+            </div>
+            <a href="#" class="btn-primary">Contribute Now</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image" style="background-image: url('../frontend/H1.jpeg');"></div>
+          <div class="card-content">
+            <h2>Youth Empowerment</h2>
+            <p>Equipping adolescents with vocational skills and mentorship to break the cycle of poverty.</p>
+            <div class="goal-bar">
+              <span class="goal-label">Goal: <strong>KES 120,000</strong></span>
+            </div>
+            <a href="#" class="btn-primary">Contribute Now</a>
+          </div>
+        </div>
+
       </div>
+    </main>
 
-      <div class="card">
-        <img src="../frontend/H2.jpg" alt="Community Health Camp" style="width:100%; border-radius:8px;">
-        <h2>Community Health Camp</h2>
-        <p>Support medical camps providing essential healthcare to slum communities.</p>
-        <p><strong>Goal:</strong> KES 80,000</p>
-        <a href="#" class="btn">Donate Now</a>
+    <footer class="dashboard-footer">
+      <div class="footer-info">
+        <p><strong>Hope for Kenya Slum Adolescents Initiatives (HKSAI)</strong></p>
+        <p>Transparency • Accountability • Community Impact</p>
       </div>
-
-      <div class="card">
-        <img src="../frontend/H1.jpeg" alt="Youth Empowerment" style="width:100%; border-radius:8px;">
-        <h2>Youth Empowerment Program</h2>
-        <p>Empower young people with skills, mentorship, and resources for a brighter future.</p>
-        <p><strong>Goal:</strong> KES 120,000</p>
-        <a href="#" class="btn">Donate Now</a>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="dashboard-footer">
-    <p>© 2025 Hope for Kenya Slum Adolescents Initiatives (HKSAI). All rights reserved.</p>
-    <p class="tagline">Transparency • Accountability • Community Impact</p>
-  </footer>
+      <p class="copyright">© 2025 HKSAI. All rights reserved.</p>
+    </footer>
+  </div>
 
 </body>
 </html>
