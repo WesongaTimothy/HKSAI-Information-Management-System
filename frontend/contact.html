@@ -10,19 +10,17 @@
             --maroon: #800000;
             --gold: #D4AF37;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.92);
+            --glass: rgba(255, 255, 255, 0.94);
         }
 
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            /* BACKGROUND PHOTO: Using H1.jpeg as the professional backdrop */
+            /* BACKGROUND PHOTO: High-impact visual from your HKSAI collection */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('H1.jpeg');
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
         .glass-wrapper {
@@ -45,7 +43,7 @@
             border-bottom: 4px solid var(--gold);
         }
 
-        .site-url { color: var(--gold); font-weight: bold; text-decoration: none; }
+        .logo { color: var(--gold); font-weight: bold; text-decoration: none; font-size: 1.2rem; }
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; }
 
         /* --- CONTENT GRID --- */
@@ -57,31 +55,70 @@
         }
 
         .info-side h2 { color: var(--maroon); font-size: 2.2rem; margin-bottom: 10px; }
-        .info-side p { color: #555; line-height: 1.6; }
-
-        .contact-detail { margin: 25px 0; }
-        .contact-detail strong { color: var(--maroon); display: block; margin-bottom: 5px; }
-
-        /* --- SOCIAL LINKS --- */
-        .social-links {
-            margin-top: 30px;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .social-icon {
-            background: var(--maroon);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: bold;
+        
+        .contact-method {
+            margin: 25px 0;
+            padding: 15px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: 0.3s;
         }
 
-        .social-icon:hover { background: var(--gold); color: var(--maroon); }
+        .contact-method:hover { transform: scale(1.02); }
+
+        .contact-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-link strong { color: var(--maroon); display: block; font-size: 1.1rem; }
+        .contact-link span { color: var(--text-muted); font-size: 1rem; }
+
+        /* --- SOCIAL & CHAT BUTTONS --- */
+        .action-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn-action {
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp { background: #25D366; color: white; }
+        .btn-email { background: var(--maroon); color: white; }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-tag {
+            background: #f0f0f0;
+            color: #333;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .social-tag:hover { background: var(--gold); }
 
         /* --- FORM --- */
         .form-side {
@@ -91,15 +128,17 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        form { display: flex; flex-direction: column; gap: 15px; }
         input, textarea {
+            width: 100%;
             padding: 15px;
+            margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 8px;
-            font-size: 1rem;
+            box-sizing: border-box;
         }
 
-        .btn-submit {
+        .btn-send {
+            width: 100%;
             background: var(--maroon);
             color: white;
             padding: 15px;
@@ -107,10 +146,7 @@
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
-            text-transform: uppercase;
         }
-
-        footer { background: var(--maroon); color: white; text-align: center; padding: 20px; }
 
         @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
     </style>
@@ -119,7 +155,7 @@
 
 <div class="glass-wrapper">
     <header>
-        <a href="index.html" class="site-url">HOPE KSAI</a>
+        <a href="index.html" class="logo">HOPE KSAI</a>
         <nav>
             <a href="projects.html">Initiatives</a>
             <a href="dashboard.html">Impact</a>
@@ -129,41 +165,55 @@
 
     <main class="contact-grid">
         <div class="info-side">
-            <h2>Get In Touch</h2>
-            <p>Guided by our <strong>2030 Strategic Plan</strong>, we invite partners, donors, and community members to join our mission in transforming Kenyan informal settlements.</p>
+            <h2>Let's Connect</h2>
+            <p>Ready to support our 2030 vision? Reach out directly via the channels below.</p>
             
-            <div class="contact-detail">
-                <strong>📍 Locations</strong>
-                <p>Nairobi (Kibera - Laini Saba) & Uasin Gishu County</p>
+            
+            <div class="contact-method">
+                <a href="tel:+254748432400" class="contact-link">
+                    <div>
+                        <strong>Call Us Directly</strong>
+                        <span>+254 748 432 400</span>
+                    </div>
+                </a>
             </div>
 
-            <div class="contact-detail">
-                <strong>✉️ Email</strong>
-                <p>info@hopeksai.org</p>
+            <div class="contact-method">
+                <a href="mailto:info@hopeksai.org" class="contact-link">
+                    <div>
+                        <strong>Email HKSAI</strong>
+                        <span>info@hopeksai.org</span>
+                    </div>
+                </a>
             </div>
 
-            <strong>Follow Our Impact:</strong>
+            <div class="action-group">
+                <a href="https://wa.me/254748432400" class="btn-action btn-whatsapp">Chat on WhatsApp</a>
+                <a href="mailto:info@hopeksai.org" class="btn-action btn-email">Open Gmail</a>
+            </div>
+
             <div class="social-links">
-                <a href="https://www.facebook.com/HKSAIorg" class="social-icon">Facebook</a>
-                <a href="https://www.linkedin.com/company/106997266/" class="social-icon">LinkedIn</a>
-                <a href="https://x.com/HKSAI27872" class="social-icon">X (Twitter)</a>
-                <a href="https://www.instagram.com/hopeksai/" class="social-icon">Instagram</a>
-                <a href="https://www.tiktok.com/@hksai0" class="social-icon">TikTok</a>
-                <a href="https://www.youtube.com/@hopeksai" class="social-icon">YouTube</a>
+                <a href="https://www.facebook.com/HKSAIorg" class="social-tag">Facebook</a>
+                <a href="https://www.linkedin.com/company/106997266/" class="social-tag">LinkedIn</a>
+                <a href="https://x.com/HKSAI27872" class="social-tag">X / Twitter</a>
+                <a href="https://www.instagram.com/hopeksai/" class="social-tag">Instagram</a>
+                <a href="https://www.tiktok.com/@hksai0" class="social-tag">TikTok</a>
+                <a href="https://www.youtube.com/@hopeksai" class="social-tag">YouTube</a>
             </div>
         </div>
 
         <div class="form-side">
+            <h3 style="color: var(--maroon); margin-bottom: 20px;">Send a Message</h3>
             <form>
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="How would you like to partner with HKSAI?" rows="5" required></textarea>
-                <button type="submit" class="btn-submit">Send Strategic Inquiry</button>
+                <textarea placeholder="Tell us how you would like to support HKSAI..." rows="6" required></textarea>
+                <button type="submit" class="btn-send">Send Inquiry</button>
             </form>
         </div>
     </main>
 
-    <footer>
+    <footer style="background: var(--maroon); color: white; text-align: center; padding: 20px;">
         <p>© 2025 HKSAI - "Leading independent, dignified and healthy lives."</p>
     </footer>
 </div>
