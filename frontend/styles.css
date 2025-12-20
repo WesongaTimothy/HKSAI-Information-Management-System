@@ -202,19 +202,19 @@ nav a:hover, nav a.active {
 */
 
 /* 1. Page Header & Intro */
-.projects-hero {
+.projects {
     text-align: center;
     padding: 80px 10% 40px;
 }
 
-.projects-hero h1 {
+.projects h1 {
     font-size: 3.2rem;
     color: var(--maroon);
     margin-bottom: 20px;
     font-weight: 800;
 }
 
-.projects-hero p {
+.projects p {
     font-size: 1.2rem;
     color: var(--text-muted);
     max-width: 800px;
