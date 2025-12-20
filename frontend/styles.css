@@ -208,6 +208,9 @@ nav a:hover, nav a.active {
 .footer-content {
     padding: 40px 5%;
 }
+.content-grid {
+  flex: 1 0 auto; /* This pushes the footer to the bottom */
+}
 
 .org-name {
     font-weight: 700;
