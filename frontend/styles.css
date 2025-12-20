@@ -1,298 +1,242 @@
 /* HKSAI BRAND IDENTITY 
-  Colors: Maroon (#800000) | Gold (#D4AF37)
-  Typography: Poppins (Clean & Professional)
+   Colors: Maroon (#800000) | Gold (#D4AF37)
+   Framework: Sticky Footer + Glassmorphism
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-  --maroon: #800000;
-  --maroon-dark: #5a0000;
-  --gold: #D4AF37;
-  --gold-light: #fdf5e6;
-  --white: #ffffff;
-  --text-main: #333333;
-  --text-muted: #666666;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --maroon: #800000;
+    --maroon-dark: #5a0000;
+    --gold: #D4AF37;
+    --gold-light: #fdf5e6;
+    --white: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* 1. Global Reset */
+/* 1. Global Reset & Base Setup */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Required for sticky footer */
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-main);
-  line-height: 1.6;
-  /* Background Image set on body */
-  background: url('../frontend/H1.jpeg') no-repeat center center fixed;
-  background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background: url('../frontend/H1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
-/* 2. Glassmorphism Layer (Ensures Readability over Background) */
+/* 2. Glassmorphism Layer (The Parent Container) */
 .glass-wrapper {
-  background: rgba(255, 255, 255, 0.90); 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Allows footer to be pushed down */
 }
 
 /* 3. Header & Navigation */
 .main-header {
-  background: var(--maroon);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    background: var(--maroon);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 5%;
-  max-width: 1400px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .site-url {
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 0.5px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
 }
 
 nav a {
-  color: var(--white);
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 nav a:hover, nav a.active {
-  color: var(--gold);
+    color: var(--gold);
 }
 
 .logout-link {
-  padding: 6px 15px;
-  border: 1px solid var(--gold);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+    padding: 6px 15px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .logout-link:hover {
-  background: var(--gold);
-  color: var(--maroon) !important;
+    background: var(--gold);
+    color: var(--maroon) !important;
 }
 
-/* Golden accent line under header */
 .gold-line {
-  height: 4px;
-  background: var(--gold);
-  width: 100%;
+    height: 4px;
+    background: var(--gold);
+    width: 100%;
 }
 
 /* 4. Hero Section */
 .hero-section {
-  text-align: center;
-  padding: 80px 10% 40px;
+    text-align: center;
+    padding: 80px 10% 40px;
 }
 
 .hero-section h1 {
-  font-size: 3rem;
-  color: var(--maroon);
-  margin-bottom: 20px;
-  font-weight: 700;
+    font-size: 3rem;
+    color: var(--maroon);
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .hero-section p {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  max-width: 850px;
-  margin: 0 auto;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 850px;
+    margin: 0 auto;
 }
 
-/* 5. Main Content Grid */
+/* 5. Main Content Grid (Sticky Footer Engine) */
 .content-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  padding: 40px 5%;
-  max-width: 1400px;
-  margin: 0 auto;
-  flex: 1; /* Pushes footer down */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex: 1 0 auto; /* CRITICAL: Grows to fill space, pushing footer to base */
 }
 
 /* 6. Donation Cards */
 .donation-card {
-  background: var(--white);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-bottom: 4px solid var(--maroon);
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    border-bottom: 4px solid var(--maroon);
+    display: flex;
+    flex-direction: column;
 }
 
 .donation-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
 }
 
 .card-img {
-  height: 230px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.5s ease;
-}
-
-.donation-card:hover .card-img {
-  transform: scale(1.05);
+    height: 230px;
+    background-size: cover;
+    background-position: center;
 }
 
 .card-body {
-  padding: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .card-body h3 {
-  color: var(--maroon);
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-
-.card-body p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-bottom: 20px;
+    color: var(--maroon);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
 }
 
 .goal-tag {
-  background: var(--gold-light);
-  padding: 10px 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: inline-block;
-  font-size: 0.9rem;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.goal-tag strong {
-  color: var(--maroon);
-  font-size: 1.1rem;
+    background: var(--gold-light);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: inline-block;
+    font-size: 0.9rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .donate-btn {
-  width: 100%;
-  padding: 14px;
-  background: var(--maroon);
-  color: var(--white);
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    margin-top: auto; /* Keeps buttons aligned */
+    width: 100%;
+    padding: 14px;
+    background: var(--maroon);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
 
 .donate-btn:hover {
-  background: var(--maroon-dark);
-  box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+    background: var(--maroon-dark);
 }
 
-/* 7. Footer */
+/* 7. Footer (Fixed to base) */
 .main-footer {
-  background: var(--maroon);
-  color: var(--white);
-  text-align: center;
-  margin-top: 60px;
+    background: var(--maroon);
+    color: var(--white);
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0; /* Prevents footer from collapsing */
 }
 
 .footer-content {
-  padding: 50px 5%;
+    padding: 40px 5%;
 }
 
 .org-name {
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
 .mission-tags {
-  color: var(--gold);
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .copyright {
-  font-size: 0.85rem;
-  opacity: 0.7;
+    font-size: 0.8rem;
+    opacity: 0.7;
 }
 
 /* 8. Responsive Adjustments */
-@media (max-width: 992px) {
-  .hero-section h1 { font-size: 2.2rem; }
-}
-
 @media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-  
-  nav a {
-    margin: 5px 10px;
-    display: inline-block;
-  }
-
-  .hero-section { padding: 40px 5%; }
-}
-
-/* 1. Ensure the base layers allow for full height */
-html, body {
-  height: 100%;
-}
-
-body.bg-image {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* 2. The Glass Wrapper must take up at least the full screen */
-.glass-wrapper {
-  background: rgba(255, 255, 255, 0.90); 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  
-  /* CRITICAL: These three lines fix the footer position */
-  min-height: 100vh; 
-  display: flex;
-  flex-direction: column;
-}
-
-/* 3. The Main content must "Grow" to push the footer to the base */
-.content-grid, 
-.dashboard-main, 
-main {
-  flex: 1 0 auto; /* This forces the main area to fill all available space */
-}
-
-/* 4. Footer Reset */
-.main-footer {
-  background: var(--maroon);
-  color: var(--white);
-  text-align: center;
-  width: 100%;
-  flex-shrink: 0; /* Prevents the footer from squishing */
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav a {
+        margin: 5px 10px;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
 }
