@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership & Board | HKSAI</title>
+    <style>
+        :root {
+            --maroon: #800000;
+            --gold: #D4AF37;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
 
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('H1.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header.portal-header {
+            background: var(--maroon);
+            padding: 20px 5%;
+            border-bottom: 4px solid var(--gold);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-title {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        nav.main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            padding: 8px 15px;
+        }
+
+        /* --- CONTAINER --- */
+        .portal-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .content-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        h2.section-title {
+            color: var(--maroon);
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* --- FOUNDER HIGHLIGHT --- */
+        .founder-section {
+            display: flex;
+            gap: 40px;
+            background: #fff9e6;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            border-left: 10px solid var(--maroon);
+            align-items: center;
+        }
+
+        .founder-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            background: #ddd;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+        }
+
+        /* --- BOARD GRID --- */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .member-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .member-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+
+        .passport-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            margin-bottom: 15px;
+            border: 2px solid var(--maroon);
+            object-fit: cover;
+        }
+
+        .member-card h3 { color: var(--maroon); margin: 10px 0 5px; font-size: 1.2rem; }
+        .member-card .role { color: var(--gold); font-weight: 700; font-size: 0.85rem; margin-bottom: 15px; text-transform: uppercase; }
+        .member-card .bio { font-size: 0.9rem; color: #666; line-height: 1.5; }
+
+        /* --- STANDARDIZED FOOTER --- */
+        footer {
+            background: var(--maroon);
+            color: white;
+            padding: 60px 5% 40px;
+            border-top: 5px solid var(--gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Standardized 3 columns */
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 { color: var(--gold); margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-col p, .footer-col li { font-size: 0.95rem; opacity: 0.9; }
+        .footer-col ul { list-style: none; padding: 0; }
+
+        @media (max-width: 900px) {
+            .footer-grid, .founder-section { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+            .founder-photo { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="portal-header">
+        <div class="header-title">HKSAI Leadership Portal</div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="#">Our Programs</a>
+            <a href="#">Board</a>
+            <a href="#" style="border: 1px solid var(--gold); color: var(--gold); border-radius: 4px;">Donate</a>
+        </nav>
+    </header>
+
+    <div class="portal-container">
+        <div class="content-card">
+            
+            <h2 class="section-title">About the Founder</h2>
+            <div class="founder-section">
+                <div style="text-align: center;">
+                    <div class="founder-photo" style="display:flex; align-items:center; justify-content:center;">[Photo]</div>
+                    <p style="font-weight:bold; margin-top:10px;">Melvine Praxides Ouyo</p>
+                </div>
+                <div>
+                    <p style="font-size: 1.1rem; margin: 0;">Melvine Ouyo founded HKSAI to reverse structural biases affecting women and girls in Kenya. Drawing from her experience as a reproductive health provider and rights advocate, she focuses on health policy reforms and community development to empower the most vulnerable communities.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Board of Directors</h2>
+            <div class="board-grid">
+                
+                <div class="member-card">
+                    <div class="passport-photo" style="display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[Photo]</div>
+                    <h3>Rebecca Harrington</h3>
+                    <p class="role">Board Member</p>
+                    <p class="bio">Senior Director of Advocacy and Outreach at Population Connection. Expert in progressive organizing for reproductive health and rights.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="passport-photo" style="display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[Photo]</div>
+                    <h3>Raila Opany</h3>
+                    <p class="role">Board Member</p>
+                    <p class="bio">Educationist and Peace Ambassador. Founder of Humane Initiative and regional director at One African Child Foundation.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="passport-photo" style="display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[Photo]</div>
+                    <h3>Eunice Murambi</h3>
+                    <p class="role">Chairlady</p>
+                    <p class="bio">Leading the board with strategic oversight and a commitment to HKSAI’s mission for youth empowerment.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="passport-photo" style="display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[Photo]</div>
+                    <h3>Dr. Jallicia Jolly</h3>
+                    <p class="role">Board Member</p>
+                    <p class="bio">Assistant Professor at Amherst College. Researcher focused on Black women’s health, HIV/AIDS equity, and reproductive justice.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="passport-photo" style="display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[Photo]</div>
+                    <h3>Kevin Owino</h3>
+                    <p class="role">Board Member</p>
+                    <p class="bio">Tech Entrepreneur and Co-founder at Nestict Infotech. Specialized in IT solutions and business process automation.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="passport-photo" style="display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[Photo]</div>
+                    <h3>Lauren Salmiery</h3>
+                    <p class="role">Advisory Team</p>
+                    <p class="bio">Communications professional at USAID with a decade of experience in global health policy and reproductive health advocacy.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Our Vision 2030</h4>
+                <p>To strengthen internal capacity and governance to advance inclusive education and health access for youth in Kenya's informal settlements.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Strategic Goals</h4>
+                <ul>
+                    <li>• 80% Graduate Employment</li>
+                    <li>• 60% Non-Grant Income</li>
+                    <li>• Policy Influence</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact Support</h4>
+                <p>
+                    Kibera, Laini Saba, Nairobi<br>
+                    <strong>Email:</strong> info@hopeksai.org<br>
+                    <strong>Phone:</strong> +254 748 432 400
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; font-size: 0.85rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
+            © 2025 HKSAI | Dignity. Education. Health.
+        </div>
+    </footer>
+
+</body>
+</html>
