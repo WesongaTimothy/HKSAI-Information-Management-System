@@ -9,39 +9,32 @@
             --maroon: #800000;
             --gold: #D4AF37;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.97);
+            --glass: rgba(255, 255, 255, 0.98);
+            --bg-fallback: #f9f9f9;
         }
 
         body {
             margin: 0;
+            padding: 0;
             font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('frontend/H1.jpeg');
-            background-size: cover;
-            background-attachment: fixed;
-            color: #333;
+            background-color: var(--bg-fallback);
+            color: #1a1a1a;
+            overflow-x: hidden;
         }
 
         /* --- HEADER --- */
         header.portal-header {
             background: var(--maroon);
-            padding: 20px 5%;
+            padding: 25px 0;
             border-bottom: 5px solid var(--gold);
             text-align: center;
         }
 
         .header-title {
             color: white;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
             margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        nav.main-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
         }
 
         nav.main-nav a {
@@ -49,70 +42,144 @@
             text-decoration: none;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            padding: 8px 12px;
-            border-radius: 5px;
+            font-size: 0.85rem;
+            padding: 10px 15px;
             transition: 0.3s;
         }
 
-        nav.main-nav a:hover { background: var(--gold); color: var(--maroon); }
-
-        /* --- FULL WIDTH SLIDER --- */
-        .full-slider {
-            width: 100%;
-            height: 500px; /* Adjust height as needed */
-            position: relative;
-            overflow: hidden;
-            background: #000;
+        /* --- FULL WIDTH 3-COLUMN GALLERY (STRETCHES TO ENDS) --- */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
+            width: 100vw;
+            height: 400px;
+            margin: 0;
+            padding: 0;
+            background: #eee;
         }
 
-        .mySlides {
-            display: none;
+        .gallery-item {
             width: 100%;
             height: 100%;
             background-size: cover;
             background-position: center;
+            border-right: 2px solid white; /* Adds a clean divider */
+            transition: transform 0.5s ease;
         }
 
-        .fade {
-            animation: fadeEffect 2s ease-in-out;
-        }
-
-        @keyframes fadeEffect {
-            from {opacity: 0.4} 
-            to {opacity: 1}
-        }
-
-        .overlay-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            width: 90%;
-            z-index: 10;
-        }
+        .gallery-item:last-child { border-right: none; }
+        
+        /* Subtle zoom effect on hover */
+        .gallery-item:hover { transform: scale(1.02); z-index: 5; }
 
         /* --- CONTENT AREA --- */
         .portal-container {
             max-width: 1200px;
-            margin: -50px auto 40px; /* Overlaps slider slightly for professional look */
+            margin: -40px auto 60px; /* Floats above the gallery */
             padding: 0 20px;
             position: relative;
-            z-index: 20;
+            z-index: 10;
         }
 
         .content-card {
             background: var(--glass);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
 
-        .vision-grid {
+        /* --- CORE VALUES 3-COLUMN GRID --- */
+        .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
         }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .value-card h3 { color: var(--maroon); margin-bottom: 15px; font-weight: 800; }
+
+        /* Responsive Fix for Mobile */
+        @media (max-width: 850px) {
+            .gallery-container { grid-template-columns: 1fr; height: auto; }
+            .gallery-item { height: 250px; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+
+        footer {
+            background: var(--maroon);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 5px solid var(--gold);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="portal-header">
+        <div class="header-title">HKSAI Integrated Information Management System</div>
+        <nav class="main-nav">
+            <a href="#">Home</a>
+            <a href="#">Strategic Hub</a>
+            <a href="#">Programs</a>
+            <a href="#" style="color: var(--gold); border: 1px solid var(--gold); border-radius: 4px;">Donate</a>
+        </nav>
+    </header>
+
+    <section class="gallery-container">
+        <div class="gallery-item" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('frontend/H1.jpeg');"></div>
+        <div class="gallery-item" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('frontend/H3.jpeg');"></div>
+        <div class="gallery-item" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('frontend/H1.jpeg');"></div>
+    </section>
+
+    <div class="portal-container">
+        <div class="content-card">
+            
+            <div style="text-align: center; margin-bottom: 50px;">
+                <span style="color: var(--maroon); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Horizon Plan</span>
+                <h1 style="color: var(--maroon); font-size: 2.5rem; margin-top: 10px;">2030 Strategic Vision</h1>
+                <p style="max-width: 700px; margin: 0 auto; color: #555; line-height: 1.6;">Driving Dignity & Equity through education and health access for youth in Kenya's informal settlements.</p>
+            </div>
+
+            <h2 style="text-align: center; color: var(--maroon); border-bottom: 2px solid var(--gold); display: inline-block; width: 100%; padding-bottom: 15px; margin-bottom: 40px;">Core Values</h2>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Humanity</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Inherent dignity, worth, and potential of every individual through compassion and empathy.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Embracing bold ideas and creative solutions to drive smarter, adaptive change.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Honesty, transparency, and accountability building trust through ethical practices.</p>
+                </div>
+            </div>
+
+            <div style="background: #fff9e6; padding: 40px; border-radius: 15px; margin-top: 50px; border-left: 8px solid var(--maroon);">
+                <h3 style="color: var(--maroon); margin-top: 0;">Our Enduring Mission</h3>
+                <p style="line-height: 1.8; font-size: 1.15rem; color: #333; margin: 0;">
+                    HKSAI exists to advance equitable access to education and healthcare for adolescents and youths living in Kenya’s informal settlements through community-led capacity building and strategic partnerships.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 HKSAI | Nairobi, Kenya | info@hopeksai.org</p>
+    </footer>
+
+</body>
+</html>
