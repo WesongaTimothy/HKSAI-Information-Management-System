@@ -1,260 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Initiatives | HKSAI 2030 Vision</title>
-  <style>
-    /* --- BRAND VARIABLES --- */
-    :root {
-      --maroon: #800000;
-      --maroon-dark: #600000;
-      --gold: #D4AF37;
-      --gold-light: #fdf8e6;
-      --white: #ffffff;
-      --text-muted: #555555;
-      --glass-bg: rgba(255, 255, 255, 0.85);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management System | HKSAI</title>
+    <style>
+        :root {
+            --maroon: #800000;
+            --maroon-dark: #600000;
+            --gold: #D4AF37;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.98);
+            --bg-overlay: rgba(0, 0, 0, 0.85);
+        }
 
-    /* --- GLOBAL STYLES --- */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      /* Background photo from your collection */
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('H1.jpeg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      color: #333;
-    }
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('H1.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            font-size: 0.85rem;
+            color: #333;
+        }
 
-    /* --- GLASS WRAPPER --- */
-    .glass-wrapper {
-      max-width: 1300px;
-      margin: 40px auto;
-      background: var(--glass-bg);
-      backdrop-filter: blur(15px);
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+        /* --- TOP NAVIGATION --- */
+        header.nav-bar {
+            background: var(--maroon);
+            padding: 10px 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* --- NAVIGATION --- */
-    header {
-      background: var(--maroon);
-      padding: 20px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 4px solid var(--gold);
-    }
+        .logo-area { color: var(--gold); font-weight: 800; font-size: 1rem; text-decoration: none; }
+        
+        .user-controls { display: flex; align-items: center; gap: 20px; }
+        .role-indicator { background: var(--gold); color: var(--maroon); padding: 3px 12px; border-radius: 4px; font-weight: 900; font-size: 0.65rem; text-transform: uppercase; }
+        
+        .logout-btn { 
+            background: rgba(255,255,255,0.1); 
+            color: white; 
+            padding: 6px 15px; 
+            border-radius: 6px; 
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: 0.3s;
+        }
+        .logout-btn:hover { background: white; color: var(--maroon); }
 
-    .site-url { 
-      color: var(--gold); 
-      font-weight: 800; 
-      text-decoration: none; 
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-    }
+        /* --- PAGE LAYOUT --- */
+        .container {
+            max-width: 1400px;
+            margin: 25px auto;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 20px;
+            padding: 0 20px;
+        }
 
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+        /* --- SIDE NAVIGATION --- */
+        .sidebar {
+            background: var(--glass);
+            border-radius: 15px;
+            padding: 20px;
+            height: fit-content;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: 0.3s;
-      padding: 5px 0;
-    }
+        .sidebar h5 { color: #999; font-size: 0.65rem; text-transform: uppercase; margin: 15px 0 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            color: #444;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            transition: 0.2s;
+            font-weight: 600;
+        }
+        .nav-item:hover, .nav-item.active { background: var(--maroon); color: white; }
 
-    nav a:hover {
-      color: var(--gold);
-      border-bottom: 2px solid var(--gold);
-    }
+        /* --- MAIN DASHBOARD AREA --- */
+        .dashboard-content {
+            background: var(--glass);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
 
-    /* --- HERO SECTION --- */
-    .hero-projects {
-      text-align: center;
-      padding: 80px 10% 40px;
-    }
+        .welcome-sec { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .welcome-sec h2 { color: var(--maroon); margin: 0; font-size: 1.4rem; }
 
-    .hero-projects h1 {
-      font-size: 3rem;
-      color: var(--maroon);
-      margin-bottom: 20px;
-      font-weight: 800;
-    }
+        /* --- MODULE GRID --- */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
 
-    .hero-projects p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
+        .card-module {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 18px;
+        }
 
-    /* --- INITIATIVES GRID --- */
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      padding: 40px 5% 80px;
-    }
+        .card-module h3 { 
+            color: var(--maroon); 
+            font-size: 0.9rem; 
+            margin-top: 0; 
+            border-left: 3px solid var(--gold); 
+            padding-left: 10px;
+        }
 
-    .project-card {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      transition: all 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      border-bottom: 5px solid var(--gold);
-    }
+        /* --- STAFF VIEW TABLE (FOR ADMIN/BOARD) --- */
+        .staff-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.75rem;
+        }
+        .staff-table th { text-align: left; color: #777; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        .staff-table td { padding: 8px 0; border-bottom: 1px solid #fafafa; }
+        
+        .status-dot { height: 8px; width: 8px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+        .online { background-color: #2ecc71; }
+        .offline { background-color: #bdc3c7; }
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(128, 0, 0, 0.15);
-    }
-
-    .project-media {
-      height: 220px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .project-info {
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .project-info h3 {
-      color: var(--maroon);
-      margin: 0 0 15px 0;
-      font-size: 1.4rem;
-    }
-
-    .project-info p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .impact-stat {
-      margin-top: auto; 
-      background: var(--gold-light);
-      color: var(--maroon);
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-align: center;
-      border: 1px solid var(--gold);
-    }
-
-    footer {
-        background: var(--maroon);
-        color: white;
-        text-align: center;
-        padding: 20px;
-        font-size: 0.85rem;
-    }
-
-    @media (max-width: 768px) {
-      .hero-projects h1 { font-size: 2.2rem; }
-      header { flex-direction: column; gap: 15px; text-align: center; }
-    }
-  </style>
+        /* --- FOOTER --- */
+        .footer-system {
+            background: var(--maroon);
+            color: white;
+            padding: 30px 5%;
+            margin-top: 50px;
+            border-top: 4px solid var(--gold);
+        }
+        .footer-cols { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px; }
+        .footer-bottom { text-align: center; font-size: 0.7rem; opacity: 0.6; margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; }
+    </style>
 </head>
 <body>
 
-  <div class="glass-wrapper">
-    <header>
-        <a href="index.html" class="site-url">HOPE KSAI</a>
-        <nav aria-label="Primary Navigation">
-            <a href="projects.html">Initiatives</a>
-            <a href="donate.html">Support Us</a>
-            <a href="dashboard.html">Our Impact</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <header class="nav-bar">
+        <a href="#" class="logo-area">HKSAI MANAGEMENT HUB</a>
+        <div class="user-controls">
+            <span class="role-indicator">Admin/Board Access</span>
+            <a href="login.html" class="logout-btn">Logout</a>
+        </div>
     </header>
 
-    <section class="hero-projects">
-      <h1>Our Strategic Initiatives</h1>
-      <p>Empowering Kenya’s informal settlements through a holistic 360° approach, as outlined in our <strong>2030 Strategic Roadmap</strong>.</p>
-    </section>
+    <div class="container">
+        <aside class="sidebar">
+            <h5>Navigation</h5>
+            <a href="#" class="nav-item active">🏠 Dashboard Home</a>
+            <a href="#" class="nav-item">📈 Impact Analytics</a>
+            <a href="#" class="nav-item">💰 Financial Tracking</a>
+            
+            <h5>People & Reports</h5>
+            <a href="#" class="nav-item">👥 Staff Directory</a>
+            <a href="#" class="nav-item">📂 Submitted Reports</a>
+            <a href="#" class="nav-item">📢 News Manager</a>
+            
+            <h5>External</h5>
+            <a href="index.html" class="nav-item">🌐 Public Website</a>
+        </aside>
 
-    <main class="projects-container">
+        <main class="dashboard-content">
+            <div class="welcome-sec">
+                <h2>Control Panel</h2>
+                <p>Welcome, Board Member. Review organizational performance and staff activity for 2025.</p>
+            </div>
 
-      <article class="project-card">
-          <div class="project-media" style="background-image: url('H1.jpeg');"></div>
-          <div class="project-info">
-              <h3>Academic Scholarships</h3>
-              <p>Eliminating financial barriers for bright and needy students with a full kit: tuition, books, uniforms, and shoes.</p>
-              <div class="impact-stat">197 Scholars Enrolled (2025)</div>
-          </div>
-      </article>
+            <div class="grid-layout">
+                
+                <div class="card-module">
+                    <h3>Staff Activity Monitor</h3>
+                    <table class="staff-table">
+                        <thead>
+                            <tr><th>Staff Member</th><th>Role</th><th>Status</th><th>Last Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>John Kamau</strong></td>
+                                <td>Program Officer</td>
+                                <td><span class="status-dot online"></span> Online</td>
+                                <td>Uploaded Kibera Report</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sarah Njeri</strong></td>
+                                <td>Health Coordinator</td>
+                                <td><span class="status-dot online"></span> Online</td>
+                                <td>Updated 21 Grads List</td>
+                            </tr>
+                            <tr>
+                                <td><strong>David Omondi</strong></td>
+                                <td>Field Staff</td>
+                                <td><span class="status-dot offline"></span> Away</td>
+                                <td>Logged 5:00 PM yesterday</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-      <article class="project-card">
-          <div class="project-media" style="background-image: url('H2.jpg');"></div>
-          <div class="project-info">
-              <h3>HKSAI Training Centre (TVET)</h3>
-              <p>Our Kibera-based center offers job-ready skills in Beauty, Hairdressing, and Computer Operations.</p>
-              <div class="impact-stat">Goal: 300 Graduates by 2030</div>
-          </div>
-      </article>
+                <div class="card-module">
+                    <h3>Recent Report Submissions</h3>
+                    <div style="background: #f9f9f9; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
+                        <span style="font-weight:bold; color: var(--maroon);">Q4 Scholarship.pdf</span>
+                        <div style="font-size: 0.7rem; color: #888;">Submitted by: Sarah Njeri • 2 hours ago</div>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
+                        <span style="font-weight:bold; color: var(--maroon);">Sanitary_Distro_LainiSaba.xlsx</span>
+                        <div style="font-size: 0.7rem; color: #888;">Submitted by: John Kamau • 5 hours ago</div>
+                    </div>
+                    <button style="background: var(--maroon); color: white; border: none; padding: 8px 15px; border-radius: 5px; font-size: 0.7rem; cursor: pointer; width: 100%;">View All Reports</button>
+                </div>
 
-      <article class="project-card">
-          <div class="project-media" style="background-image: url('H1.jpeg');"></div>
-          <div class="project-info">
-              <h3>Menstrual Health & SRHR</h3>
-              <p>Breaking stigma and providing dignity through health education and hygiene kit distribution.</p>
-              <div class="impact-stat">20,000 Pads Distributed Yearly</div>
-          </div>
-      </article>
+                <div class="card-module">
+                    <h3>Impact Quick-View</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                        <div style="flex:1; background: #fff9e6; padding: 10px; border-radius: 8px; border: 1px solid var(--gold); text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: 800; color: var(--maroon);">197</div>
+                            <small>Scholars</small>
+                        </div>
+                        <div style="flex:1; background: #fff9e6; padding: 10px; border-radius: 8px; border: 1px solid var(--gold); text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: 800; color: var(--maroon);">21</div>
+                            <small>Graduates</small>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.75rem; border-top: 1px solid #eee; padding-top: 10px;">
+                        <strong>Latest News:</strong> "Kibera Vocational Center Expansion" 
+                        <span style="color: green; font-weight:bold;">[Live]</span>
+                    </div>
+                </div>
 
-      <article class="project-card">
-          <div class="project-media" style="background-image: url('H2.jpg');"></div>
-          <div class="project-info">
-              <h3>Economic Empowerment</h3>
-              <p>Supporting youth entrepreneurs through the WEDU program to launch and sustain small businesses.</p>
-              <div class="impact-stat">Strategic Partnerships Active</div>
-          </div>
-      </article>
+            </div>
+        </main>
+    </div>
 
-      <article class="project-card">
-          <div class="project-media" style="background-image: url('H1.jpeg');"></div>
-          <div class="project-info">
-              <h3>Mental Health Advocacy</h3>
-              <p>Safe spaces for youth to address trauma and mental health stigma in urban settlements.</p>
-              <div class="impact-stat">Professional Counseling Sessions</div>
-          </div>
-      </article>
-
-      <article class="project-card">
-          <div class="project-media" style="background-image: url('H2.jpg');"></div>
-          <div class="project-info">
-              <h3>Advocacy & GBV Prevention</h3>
-              <p>Working to end early marriages and harmful cultural practices through community-led advocacy.</p>
-              <div class="impact-stat">10,000 Girls Trained Annually</div>
-          </div>
-      </article>
-
-    </main>
-
-    <footer>
-        <p>© 2025 HKSAI - "Leading independent, dignified and healthy lives."</p>
+    <footer class="footer-system">
+        <div class="footer-cols">
+            <div style="flex: 1.5;">
+                <h4 style="color: var(--gold); margin-bottom: 10px;">HKSAI Management</h4>
+                <p style="font-size: 0.75rem; opacity: 0.8; line-height: 1.6;">
+                    The Hope for Kenya Slum Adolescents Initiative (HKSAI) secure portal is designed to manage 2030 strategic objectives, staff productivity, and stakeholder transparency.
+                </p>
+            </div>
+            <div style="flex: 1;">
+                <h4 style="color: var(--gold); margin-bottom: 10px;">Legal & Security</h4>
+                <ul style="list-style: none; padding: 0; font-size: 0.75rem; opacity: 0.8;">
+                    <li>Privacy Policy</li>
+                    <li>Data Protection Act Compliance</li>
+                    <li>Internal Audit Logs</li>
+                </ul>
+            </div>
+            <div style="flex: 1;">
+                <h4 style="color: var(--gold); margin-bottom: 10px;">Support</h4>
+                <p style="font-size: 0.75rem; opacity: 0.8;">
+                    <strong>Tech Desk:</strong> support@hopeksai.org<br>
+                    <strong>Emergency:</strong> +254 748 432 400
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 HKSAI. Leading independent, dignified and healthy lives. | Strictly for Authorized Personnel.
+        </div>
     </footer>
-  </div>
 
 </body>
 </html>
