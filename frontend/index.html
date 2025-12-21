@@ -1,1 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKSAI | 2030 Strategic Hub</title>
+    <style>
+        :root {
+            --maroon: #800000;
+            --gold: #D4AF37;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.92);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            /* Professional background with a blur-friendly tint */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('H1.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header.portal-header {
+            background: var(--maroon);
+            padding: 20px 5%;
+            border-bottom: 5px solid var(--gold);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-title {
+            color: white;
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        nav.main-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav.main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            padding: 8px 15px;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        nav.main-nav a:hover { background: var(--gold); color: var(--maroon); }
+
+        /* --- MAIN CONTAINER --- */
+        .portal-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .content-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px); /* Modern professional blur */
+            -webkit-backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        /* --- STRATEGIC VISION BLOCKS --- */
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .vision-block {
+            background: var(--maroon);
+            color: var(--gold);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 1px solid var(--gold);
+        }
+
+        /* --- CORE VALUES GRID (3x2 Balanced) --- */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .value-item {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .value-item:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(128,0,0,0.1);
+        }
+
+        .value-circle {
+            background: var(--maroon);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        /* --- PROGRAM PILLARS --- */
+        .program-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .program-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            border-left: 5px solid var(--maroon);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .program-card:hover { transform: scale(1.02); border-left-color: var(--gold); }
+
+        .metric {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--maroon);
+            margin: 15px 0;
+        }
+
+        .btn-donate {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: var(--maroon);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-donate:hover { background: var(--gold); color: var(--maroon); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--maroon);
+            color: white;
+            padding: 60px 5% 30px;
+            margin-top: 80px;
+            border-top: 5px solid var(--gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .program-section { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .values-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="portal-header">
+        <div class="header-title">HKSAI Integrated Information Management System</div>
+        <nav class="main-nav">
+            <a href="#">Home</a>
+            <a href="donate.html">About Us</a>
+            <a href="board.html">Board Members</a>
+            <a href="dashboard.html">Staff Portfolio</a>
+            <a href="donate.html">Programs</a>
+             <a href="gallery.html">Media Centre</a>
+            <a href="#" style="border: 1px solid var(--gold); color: var(--gold);">Donate Now</a>
+        </nav>
+    </header>
+
+    <div class="portal-container">
+        <div class="content-card">
+            
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: var(--maroon); margin-bottom: 25px; font-size: 2rem; font-weight: 800;">2030 Strategic Vision: Horizon Plan</h2>
+                <div class="vision-grid">
+                    <div class="vision-block">Institutional Capacity</div>
+                    <div class="vision-block">Governance Excellence</div>
+                    <div class="vision-block">Financial Stability</div>
+                    <div class="vision-block">Education Equity</div>
+                    <div class="vision-block">Health Access</div>
+                </div>
+            </div>
+
+            <div style="background: #fff9e6; padding: 40px; border-radius: 20px; margin-bottom: 60px; border-left: 10px solid var(--maroon);">
+                <h3 style="color: var(--maroon); margin-top: 0; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px;">Our Enduring Mission</h3>
+                <p style="line-height: 1.5; font-size: 1.6rem; color: #444; margin: 0; font-weight: 300;">
+                    HKSAI exists to advance equitable access to education and healthcare for youth in Kenya’s informal settlements through community-led capacity building.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="color: var(--maroon); margin-bottom: 10px; font-size: 2.2rem; font-weight: 900;">Our Reaffirmed Core Values</h2>
+                <div style="width: 80px; height: 4px; background: var(--gold); margin: 0 auto 40px;"></div>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-circle">01</div>
+                    <h3 style="color: var(--maroon);">Humanity</h3>
+                    <p style="font-size: 0.95rem; color: #555;">Inherent dignity, worth, and potential of every individual through compassion and empathy.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-circle">02</div>
+                    <h3 style="color: var(--maroon);">Innovation</h3>
+                    <p style="font-size: 0.95rem; color: #555;">Embracing bold ideas and creative solutions to meet evolving community needs.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-circle">03</div>
+                    <h3 style="color: var(--maroon);">Inclusiveness</h3>
+                    <p style="font-size: 0.95rem; color: #555;">Committed to equity and belonging for every voice, especially marginalized youth.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-circle">04</div>
+                    <h3 style="color: var(--maroon);">Integrity</h3>
+                    <p style="font-size: 0.95rem; color: #555;">Upholding honesty and accountability through ethical practices and transparency.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-circle">05</div>
+                    <h3 style="color: var(--maroon);">Partnership</h3>
+                    <p style="font-size: 0.95rem; color: #555;">Thriving through collective action hand-in-hand with community leaders.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-circle">06</div>
+                    <h3 style="color: var(--maroon);">Collaboration</h3>
+                    <p style="font-size: 0.95rem; color: #555;">Harnessing collective strengths to advance inclusive education and health.</p>
+                </div>
+            </div>
+
+            <h2 style="text-align: center; color: var(--maroon); margin-bottom: 30px; font-size: 2rem;">Strategic Pillars & Impact</h2>
+            <div class="program-section">
+                <div class="program-card">
+                    <h3 style="color: var(--maroon);">Education Pillar</h3>
+                    <p>Scaling reach through tuition, mentorship, and life skills for the vulnerable.</p>
+                    <div class="metric">550 Scholars</div>
+                    <p style="font-size: 0.85rem; color: #666;">Targeting 100% post-secondary transition by 2030.</p>
+                    <a href="#" class="btn-donate">Support a Scholar</a>
+                </div>
+
+                <div class="program-card">
+                    <h3 style="color: var(--maroon);">Health Pillar</h3>
+                    <p>Expansion of outreach, advocacy, and health equity campaigns across the region.</p>
+                    <div class="metric">40,000 Beneficiaries</div>
+                    <p style="font-size: 0.85rem; color: #666;">Aiming for 90% improved health behavior outcomes.</p>
+                    <a href="#" class="btn-donate">Support Health Access</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4 style="color: var(--gold);">Our Vision 2030</h4>
+                <p style="font-size: 0.85rem; opacity: 0.8; line-height: 1.6;">Strengthening governance and financial stability to advance inclusive education and health access for youth in Kenya's informal settlements.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--gold);">Strategic Goals</h4>
+                <ul style="list-style: none; padding: 0; font-size: 0.85rem; opacity: 0.8; line-height: 2.2;">
+                    <li>• 80% Graduate Employment Rate</li>
+                    <li>• Diversify Income to 60% Non-Grant</li>
+                    <li>• Complete MEL Framework Integration</li>
+                    <li>• National Policy Influence</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: var(--gold);">Contact Support</h4>
+                <p style="font-size: 0.85rem; opacity: 0.8; line-height: 1.8;">
+                    Kibera, Laini Saba, Nairobi<br>
+                    Email: info@hopeksai.org<br>
+                    Phone: +254 748 432 400
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; font-size: 0.8rem; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            © 2025 HKSAI | Leading independent, dignified and healthy lives.
+        </div>
+    </footer>
+
+</body>
+</html>
 
