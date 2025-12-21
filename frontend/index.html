@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management Home | HKSAI Control Center</title>
+    <title>Management Portal | HKSAI</title>
     <style>
         :root {
             --maroon: #800000;
             --maroon-dark: #600000;
             --gold: #D4AF37;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.96);
-            --gray-bg: #f4f4f4;
+            --glass: rgba(255, 255, 255, 0.95);
         }
 
         body {
@@ -20,200 +19,272 @@
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('H1.jpeg');
             background-size: cover;
             background-attachment: fixed;
-            font-size: 0.88rem;
+            font-size: 1rem; /* Slightly bigger font */
             color: #333;
         }
 
-        /* --- NAVIGATION --- */
-        header.portal-nav {
+        /* --- EXTENDED HEADER --- */
+        header.portal-header {
             background: var(--maroon);
-            padding: 12px 5%;
+            padding: 25px 5%; /* Slightly big header */
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid var(--gold);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            margin-bottom: 15px;
         }
 
-        .brand { color: var(--gold); font-weight: 800; font-size: 1.1rem; text-decoration: none; }
-        .user-status { color: white; display: flex; align-items: center; gap: 15px; }
-        .badge { background: var(--gold); color: var(--maroon); padding: 2px 10px; border-radius: 5px; font-weight: 800; font-size: 0.7rem; }
-        
-        .logout-link { color: white; text-decoration: none; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 6px; }
+        .user-profile { color: white; display: flex; align-items: center; gap: 12px; }
+        .user-badge { background: var(--gold); color: var(--maroon); padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
 
-        /* --- LAYOUT --- */
-        .wrapper {
+        /* --- NAVIGATION LINKS --- */
+        nav.main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        nav.main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav.main-nav a:hover { color: var(--gold); }
+
+        /* --- PORTAL LAYOUT --- */
+        .portal-container {
             max-width: 1300px;
-            margin: 30px auto;
+            margin: 40px auto;
             display: grid;
-            grid-template-columns: 240px 1fr;
+            grid-template-columns: 280px 1fr;
             gap: 25px;
             padding: 0 20px;
         }
 
-        /* --- SIDEBAR --- */
         .sidebar {
             background: var(--glass);
+            padding: 25px;
             border-radius: 20px;
-            padding: 20px;
             height: fit-content;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .sidebar h4 { color: var(--maroon); font-size: 0.7rem; text-transform: uppercase; margin: 20px 0 10px; border-bottom: 1px solid #ddd; }
-        .nav-link {
+        .nav-group h4 { color: var(--maroon); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        
+        .nav-item {
             display: flex;
             align-items: center;
-            padding: 10px;
+            padding: 12px;
             color: #444;
             text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 4px;
-            transition: 0.2s;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            transition: 0.3s;
         }
-        .nav-link:hover, .nav-link.active { background: var(--maroon); color: white; }
 
-        /* --- MAIN CONTENT --- */
-        .main-content {
+        .nav-item:hover, .nav-item.active { background: var(--maroon); color: white; }
+
+        /* --- MAIN CONTENT AREA --- */
+        .content-area {
             background: var(--glass);
+            padding: 40px;
             border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .section-title { color: var(--maroon); border-left: 4px solid var(--gold); padding-left: 10px; margin-bottom: 20px; }
-
-        /* --- DASHBOARD WIDGETS --- */
-        .dashboard-grid {
+        /* --- MISSION / VISION / VALUES --- */
+        .strategic-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
+            margin-bottom: 30px;
         }
 
-        .widget {
-            background: #fff;
-            border-radius: 15px;
+        .info-card {
+            background: white;
             padding: 20px;
-            border: 1px solid #eee;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border-radius: 12px;
+            border-top: 4px solid var(--maroon);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* --- NEWS & DONATION STYLES --- */
-        .stat-box { background: var(--maroon); color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 15px; }
-        .stat-box h1 { margin: 5px 0; font-size: 1.8rem; color: var(--gold); }
+        .info-card h3 { color: var(--maroon); margin-top: 0; font-size: 1.1rem; }
 
-        .list-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f4f4f4; font-size: 0.8rem; }
-        .list-item span.date { color: #999; font-size: 0.7rem; }
+        /* --- ACTION GRID --- */
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-        .btn-action {
-            background: var(--gold);
-            color: var(--maroon);
+        .action-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .upload-zone {
+            border: 2px dashed var(--gold);
+            padding: 30px;
+            border-radius: 15px;
+            background: #fff9e6;
+            margin-top: 20px;
+        }
+
+        .btn-upload {
+            background: var(--maroon);
+            color: white;
+            padding: 12px 30px;
             border: none;
-            padding: 6px 12px;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 0.7rem;
             cursor: pointer;
-            margin-top: 10px;
         }
 
-        footer { text-align: center; color: rgba(255,255,255,0.5); font-size: 0.7rem; margin-top: 30px; }
+        .report-list { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .report-list th { text-align: left; padding: 12px; border-bottom: 2px solid var(--maroon); color: var(--maroon); }
+        .report-list td { padding: 12px; border-bottom: 1px solid #eee; }
+
+        /* --- FULL WIDTH FOOTER --- */
+        footer.full-footer {
+            background: var(--maroon);
+            color: white;
+            padding: 50px 5% 20px;
+            margin-top: 60px;
+            border-top: 5px solid var(--gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 { color: var(--gold); text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .footer-col p { line-height: 1.6; font-size: 0.9rem; opacity: 0.9; }
+
     </style>
 </head>
 <body>
 
-    <header class="portal-nav">
-        <a href="index.html" class="brand">HKSAI COMMAND</a>
-        <div class="user-status">
-            <span class="badge">ADMIN PORTAL</span>
-            <a href="login.html" class="logout-link">Logout</a>
+    <header class="portal-header">
+        <div class="header-top">
+            <div class="user-profile">
+                <strong style="font-size: 1.4rem; letter-spacing: 1px;">HKSAI MANAGEMENT HUB</strong>
+                <span class="user-badge">STAFF MODE</span>
+            </div>
+            <a href="login.html" style="color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 5px 15px; border-radius: 5px;">LOGOUT</a>
         </div>
+        
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Board Members</a>
+            <a href="#">Staff Portfolio</a>
+            <a href="#">Programs</a>
+            <a href="#">Media Center</a>
+        </nav>
     </header>
 
-    <div class="wrapper">
+    <div class="portal-container">
         <aside class="sidebar">
-            <h4>Operations</h4>
-            <a href="#" class="nav-link active">📊 Dashboard</a>
-            <a href="#" class="nav-link">📢 News Manager</a>
-            <a href="#" class="nav-link">💰 Donations</a>
-            
-            <h4>Impact Tracking</h4>
-            <a href="#" class="nav-link">🎓 Scholars (197)</a>
-            <a href="#" class="nav-link">🏆 Graduates (21)</a>
-            
-            <h4>System</h4>
-            <a href="index.html" class="nav-link">🌐 Public Website</a>
-            <a href="#" class="nav-link">⚙️ Settings</a>
+            <div class="nav-group">
+                <h4>Operations</h4>
+                <a href="#" class="nav-item active">📊 Dashboard</a>
+                <a href="#" class="nav-item">📂 View Reports</a>
+                <a href="#" class="nav-item">⬆️ Upload Data</a>
+                <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+                <a href="#" class="nav-item">📞 Contact Admin</a>
+            </div>
         </aside>
 
-        <main class="main-content">
-            <h2 class="section-title">Operational Overview</h2>
+        <main class="content-area">
+            <h2 style="color: var(--maroon); margin: 0 0 10px 0;">Board & Staff Control Center</h2>
+            <p style="color: #666; margin-bottom: 30px;">Welcome to the 2030 Strategic Vision portal. Manage impact and reports below.</p>
 
-            <div class="dashboard-grid">
-                
-                <div class="widget">
-                    <h3 style="margin-top:0;">Donation Tracking</h3>
-                    <div class="stat-box">
-                        <small>Monthly Collection</small>
-                        <h1>KES 45,200</h1>
-                    </div>
-                    <div class="list-item">
-                        <div><strong>Anonymous</strong><br><span class="date">Scholarship Fund</span></div>
-                        <div style="color: green;">+ 5,000</div>
-                    </div>
-                    <div class="list-item">
-                        <div><strong>Global Partner</strong><br><span class="date">Dignity Kits</span></div>
-                        <div style="color: green;">+ 12,000</div>
-                    </div>
-                    <button class="btn-action">View All Transactions</button>
+            <div class="strategic-info">
+                <div class="info-card">
+                    <h3>Our Vision</h3>
+                    <p>A society where inspired young people lead independent, dignified, and healthy lives.</p>
                 </div>
-
-                <div class="widget">
-                    <h3 style="margin-top:0;">Live News & Stories</h3>
-                    <p style="font-size: 0.75rem; color: #666;">Manage what appears on the public home page.</p>
-                    
-                    <div class="list-item">
-                        <div><strong>Success Story</strong><br>21 Graduates of Laini Saba...</div>
-                        <div style="color: var(--maroon);">[Active]</div>
-                    </div>
-                    <div class="list-item">
-                        <div><strong>Field Update</strong><br>197 Scholars received kits...</div>
-                        <div style="color: var(--maroon);">[Draft]</div>
-                    </div>
-                    <div class="list-item">
-                        <div><strong>Event</strong><br>Menstrual Hygiene Day 2025</div>
-                        <div style="color: #999;">[Archived]</div>
-                    </div>
-                    <button class="btn-action" style="background: var(--maroon); color: white;">+ Create New Story</button>
+                <div class="info-card">
+                    <h3>Our Mission</h3>
+                    <p>To advance education, health, and socioeconomic opportunities that empower adolescents and youths in Kenya’s informal settlements.</p>
                 </div>
-
-                <div class="widget">
-                    <h3 style="margin-top:0;">Upload Staff Reports</h3>
-                    <div style="border: 2px dashed #ddd; padding: 20px; text-align: center; border-radius: 10px;">
-                        <p style="font-size: 0.7rem;">Upload field reports for Kibera or Uasin Gishu</p>
-                        <input type="file" id="file" style="display:none">
-                        <button class="btn-action" onclick="document.getElementById('file').click()">Select File</button>
-                    </div>
-                    <div style="margin-top: 15px;">
-                        <small><strong>Pending Reviews:</strong> 3 Reports</small>
-                    </div>
+                <div class="info-card" style="grid-column: span 2;">
+                    <h3>Core Values</h3>
+                    <p><strong>Humanity, Excellence, Integrity, Respect, Professionalism, Fairness.</strong></p>
                 </div>
-
             </div>
 
-            
+            <div class="action-grid">
+                <div class="action-card">
+                    <h3 style="color: var(--maroon);">System Reports</h3>
+                    <table class="report-list">
+                        <tr><th>Report Name</th><th>Status</th></tr>
+                        <tr><td>Q4 Education Impact</td><td>Verified</td></tr>
+                        <tr><td>Laini Saba Vocational</td><td>Pending</td></tr>
+                    </table>
+                </div>
 
-            <div style="margin-top: 25px; padding: 15px; background: #fffdf5; border: 1px solid var(--gold); border-radius: 10px;">
-                <strong style="color: var(--maroon);">Strategic Goal 2030 Reminder:</strong>
-                <p style="margin: 5px 0 0; font-size: 0.8rem;">We are currently at 49% of our target for Menstrual Equity distribution. Ensure all <strong>Dignity Kit</strong> donations are logged immediately for quarterly reporting.</p>
+                <div class="action-card">
+                    <h3 style="color: var(--maroon);">Submit New Data</h3>
+                    <div class="upload-zone">
+                        <p>Upload Program Updates</p>
+                        <input type="file" id="reportFile" style="display: none;">
+                        <button class="btn-upload" onclick="document.getElementById('reportFile').click()">Browse Files</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; background: #fff; padding: 20px; border-radius: 15px; border-left: 5px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <strong style="color: var(--maroon);">Strategic Reminder:</strong>
+                <p style="margin: 5px 0 0; font-size: 0.9rem;">Final audit of the <strong>21 Graduates</strong> and <strong>197 Scholars</strong> is due for Board review.</p>
             </div>
         </main>
     </div>
 
-    <footer>
-        © 2025 HKSAI Internal Management System | Kibera, Laini Saba Operations Hub
+    <footer class="full-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About HKSAI</h4>
+                <p>Empowering adolescents in Kenya's informal settlements through education, health, and vocational excellence. Registered NGO committed to the 2030 vision.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <p>
+                    <a href="#" style="color: white;">Board Ethics</a><br>
+                    <a href="#" style="color: white;">Staff Portal Login</a><br>
+                    <a href="#" style="color: white;">Annual Impact Reports</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>
+                    Laini Saba, Kibera, Nairobi<br>
+                    Email: info@hopeksai.org<br>
+                    Phone: +254 748 432 400
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; opacity: 0.7;">
+            © 2025 HKSAI Management System | Secure Internal Access Only | All Rights Reserved.
+        </div>
     </footer>
 
 </body>
