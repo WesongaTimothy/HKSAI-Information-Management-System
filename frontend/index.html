@@ -9,7 +9,7 @@
             --maroon: #800000;
             --gold: #D4AF37;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.96);
+            --glass: rgba(255, 255, 255, 0.97);
         }
 
         body {
@@ -22,10 +22,10 @@
             color: #333;
         }
 
-        /* --- HEADER REVISION (NO ADMIN LOGIN) --- */
+        /* --- HEADER --- */
         header.portal-header {
             background: var(--maroon);
-            padding: 30px 5%;
+            padding: 25px 5%;
             border-bottom: 5px solid var(--gold);
             text-align: center;
         }
@@ -42,7 +42,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav.main-nav a {
@@ -50,17 +50,17 @@
             text-decoration: none;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             padding: 8px 15px;
             transition: 0.3s;
             border-radius: 5px;
         }
 
-        nav.main-nav a:hover { background: var(--gold); color: var(--maroon); }
+        nav.main-nav a:hover, .nav-active { background: var(--gold); color: var(--maroon); }
 
         /* --- CONTENT AREA --- */
         .portal-container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -72,58 +72,69 @@
             box-shadow: 0 15px 50px rgba(0,0,0,0.3);
         }
 
-        /* --- VISION BLOCKS (5 WELL-SIZED BLOCKS) --- */
-        .vision-header { text-align: center; margin-bottom: 30px; color: var(--maroon); }
-        
+        /* --- VISION BLOCKS --- */
         .vision-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
             margin-bottom: 40px;
         }
 
         .vision-block {
             background: var(--maroon);
             color: var(--gold);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 10px;
             text-align: center;
             font-weight: 700;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 0.85rem;
             border: 1px solid var(--gold);
+        }
+
+        /* --- PROGRAMS SECTION --- */
+        .program-section {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .program-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
             transition: 0.3s;
         }
-        .vision-block:hover { transform: translateY(-5px); background: var(--maroon-dark); }
 
-        /* --- MISSION & VALUES --- */
-        .mission-box {
-            background: #fff9e6;
-            border-left: 8px solid var(--maroon);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 40px;
+        .program-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+        .program-card h3 { color: var(--maroon); margin-top: 0; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+
+        .metric {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--maroon);
+            margin: 15px 0;
         }
 
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .btn-donate {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: var(--maroon);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
-        .value-item {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid #eee;
-        }
+        .btn-donate:hover { background: var(--gold); color: var(--maroon); }
 
-        .value-item strong { color: var(--maroon); font-size: 1.1rem; display: block; margin-bottom: 8px; }
-
-        /* --- FULL WIDTH FOOTER --- */
+        /* --- FOOTER --- */
         footer {
             background: var(--maroon);
             color: white;
@@ -132,109 +143,101 @@
             border-top: 5px solid var(--gold);
         }
 
-        .footer-content {
+        .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-
     </style>
 </head>
 <body>
 
     <header class="portal-header">
-        <div class="header-title">HKSAI Management System</div>
+        <div class="header-title">HKSAI STRATEGIC HUB</div>
         <nav class="main-nav">
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
             <a href="#">About Us</a>
             <a href="#">Board Members</a>
             <a href="#">Staff Portfolio</a>
-            <a href="donate.html#">Programs</a>
-            <a href="#">Media Center</a>
+            <a href="donate.html">Programs</a> <a href="#">Media Center</a>
+            <a href="donate.html" style="border: 1px solid var(--gold); color: var(--gold);">Donate Now</a>
         </nav>
     </header>
 
     <div class="portal-container">
         <div class="content-card">
             
-            <div class="vision-header">
-                <h2 style="margin: 0;">2030 Strategic Vision</h2>
-                <p style="color: #666;">Our institutional ambition for the next horizon</p>
-            </div>
-            
-            <div class="vision-grid">
-                <div class="vision-block">Internal Capacity Strengthening</div>
-                <div class="vision-block">Robust Governance & Leadership</div>
-                <div class="vision-block">Financial Stability & Resilience</div>
-                <div class="vision-block">Inclusive Education Access</div>
-                <div class="vision-block">Advanced Health Outcomes</div>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="color: var(--maroon); margin-bottom: 10px;">2030 Strategic Vision: Horizon Plan</h2>
+                <div class="vision-grid">
+                    <div class="vision-block">Institutional Capacity</div>
+                    <div class="vision-block">Governance Excellence</div>
+                    <div class="vision-block">Financial Stability</div>
+                    <div class="vision-block">Education Equity</div>
+                    <div class="vision-block">Health Access</div>
+                </div>
             </div>
 
-            <div class="mission-box">
-                <h3 style="color: var(--maroon); margin-top: 0;">Our Mission</h3>
-                <p style="font-size: 1.1rem; line-height: 1.6; color: #444;">
-                    HKSAI exists to advance equitable access to education and healthcare for adolescents and youths living in Kenya’s informal settlements. We achieve this through community-led capacity building, advocacy, and strategic partnerships that foster lifelong learning, health equity, and sustainable empowerment.
+            <div style="background: #fff9e6; padding: 30px; border-radius: 15px; margin-bottom: 50px;">
+                <h3 style="color: var(--maroon); margin-top: 0;">Our Enduring Mission</h3>
+                <p style="line-height: 1.6; font-size: 1.1rem; color: #444;">
+                    HKSAI exists to advance equitable access to education and healthcare for adolescents and youths living in Kenya’s informal settlements through community-led capacity building and strategic partnerships.
                 </p>
             </div>
 
-            <h3 style="color: var(--maroon); text-align: center; margin-bottom: 25px;">Our Core Values</h3>
-            <div class="values-grid">
-                <div class="value-item">
-                    <strong>Humanity</strong>
-                    <p style="font-size: 0.9rem; margin: 0;">Centering compassion and empathy, treating every adolescent with dignity, regardless of background.</p>
+            <h2 style="text-align: center; color: var(--maroon); margin-bottom: 30px;">Strategic Pillars: Programs & Impact</h2>
+            
+            <div class="program-section">
+                <div class="program-card">
+                    <h3>Education Pillar</h3>
+                    <p>Scaling reach to marginalized youth through tuition, mentorship, and life skills.</p>
+                    <div class="metric">400 Scholars</div>
+                    <p style="font-size: 0.85rem; color: #666;">Targeting 100% post-secondary transition by 2030.</p>
+                    <a href="donate.html" class="btn-donate">Support a Scholar</a>
                 </div>
-                <div class="value-item">
-                    <strong>Innovation</strong>
-                    <p style="font-size: 0.9rem; margin: 0;">Embracing bold ideas and creative solutions to meet the evolving needs of underserved communities.</p>
-                </div>
-                <div class="value-item">
-                    <strong>Inclusiveness</strong>
-                    <p style="font-size: 0.9rem; margin: 0;">Commitment to equity, ensuring the voices of marginalized girls and youth are heard and valued.</p>
-                </div>
-                <div class="value-item">
-                    <strong>Integrity</strong>
-                    <p style="font-size: 0.9rem; margin: 0;">Upholding honesty and transparency, building trust through ethical practices and principled leadership.</p>
-                </div>
-                <div class="value-item">
-                    <strong>Collaboration</strong>
-                    <p style="font-size: 0.9rem; margin: 0;">Achieving lasting impact by working hand-in-hand with community leaders and partners.</p>
-                </div>
-                <div class="value-item">
-                    <strong>Excellence</strong>
-                    <p style="font-size: 0.9rem; margin: 0;">Maintaining high standards of professionalism and fairness in all programmatic outcomes.</p>
+
+                <div class="program-card">
+                    <h3>Health Pillar</h3>
+                    <p>Fivefold expansion of outreach, advocacy, and health equity campaigns.</p>
+                    <div class="metric">40,000 Beneficiaries</div>
+                    <p style="font-size: 0.85rem; color: #666;">Aiming for 90% improved health behavior outcomes.</p>
+                    <a href="donate.html" class="btn-donate">Support Health Access</a>
                 </div>
             </div>
+
+            
+
         </div>
     </div>
 
     <footer>
-        <div class="footer-content">
+        <div class="footer-grid">
             <div>
-                <h4 style="color: var(--gold);">HKSAI 2030</h4>
-                <p style="font-size: 0.9rem; opacity: 0.8;">Leading the way in adolescent empowerment across Kenya's informal settlements. Our 2030 strategy focuses on scaling impact for 40,000 health beneficiaries and 400 scholars.</p>
+                <h4 style="color: var(--gold);">Our Vision 2030</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">To strengthen internal capacity, governance, and financial stability to advance inclusive education and health access for youth in Kenya's informal settlements.</p>
             </div>
             <div>
-                <h4 style="color: var(--gold);">Strategic Pillars</h4>
-                <ul style="list-style: none; padding: 0; font-size: 0.9rem; opacity: 0.8; line-height: 2;">
-                    <li>Organizational Capacity</li>
-                    <li>Programs and Impact</li>
-                    <li>Strategic Partnerships</li>
-                    <li>Financial Sustainability</li>
+                <h4 style="color: var(--gold);">Strategic Goals</h4>
+                <ul style="list-style: none; padding: 0; font-size: 0.85rem; opacity: 0.8; line-height: 2;">
+                    <li>✓ 80% Graduate Employment Rate</li>
+                    <li>✓ Diversify Income to 60% Non-Grant</li>
+                    <li>✓ Complete MEL Framework Integration</li>
+                    <li>✓ National Policy Influence</li>
                 </ul>
             </div>
             <div>
-                <h4 style="color: var(--gold);">Contact Hub</h4>
+                <h4 style="color: var(--gold);">Contact Support</h4>
                 <p style="font-size: 0.9rem; opacity: 0.8;">
-                    Laini Saba, Kibera, Nairobi<br>
-                    Email: strategic-plan@hopeksai.org<br>
+                    Kibera, Laini Saba, Nairobi<br>
+                    Email: info@hopeksai.org<br>
                     Phone: +254 748 432 400
                 </p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; opacity: 0.6;">
-            © 2025 Hope for Kenya Slum Adolescents Initiative | "Leading independent, dignified and healthy lives."
+        <div style="text-align: center; margin-top: 40px; font-size: 0.8rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            © 2025 HKSAI | Leading independent, dignified and healthy lives.
         </div>
     </footer>
 
