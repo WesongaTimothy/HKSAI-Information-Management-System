@@ -3,157 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership & Board | HKSAI</title>
+    <title>Media Hub | HKSAI Transparency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --maroon: #800000;
             --gold: #D4AF37;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.96);
+            --glass: rgba(255, 255, 255, 0.98);
         }
 
         body {
             margin: 0;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('H1.jpeg');
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('H1.jpeg');
             background-size: cover;
             background-attachment: fixed;
-            background-position: center;
-            font-size: 1rem; /* Standardized Medium Font */
             color: #333;
-            line-height: 1.6;
         }
 
-        /* --- HEADER --- */
+        /* --- INTEGRATED HEADER & NAV --- */
         header.portal-header {
             background: var(--maroon);
-            padding: 20px 5%;
-            border-bottom: 4px solid var(--gold);
+            padding: 25px 5%;
+            border-bottom: 5px solid var(--gold);
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .header-title {
-            color: white;
-            font-size: 1.6rem;
-            font-weight: 800;
+        .header-title { 
+            color: white; 
+            font-size: 1.8rem; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            margin-bottom: 15px; 
+        }
+        
+        nav.main-nav { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 12px; 
         }
 
-        /* --- MAIN CONTAINER --- */
-        .portal-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .content-card {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            padding: 50px 40px;
-            border-radius: 30px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-        }
-
-        /* --- FOUNDER BOX (Updated for Name Under Photo) --- */
-        .founder-container {
-            display: flex;
-            gap: 40px;
-            background: #fff9e6;
-            padding: 40px;
-            border-radius: 22px;
-            margin-bottom: 61px;
-            border-left: 10px solid var(--maroon);
-            align-items: flex-start;
-        }
-
-        .founder-profile-column {
-            text-align: center;
-            flex: 0 0 220px; /* Fixed width for the photo/name column */
-        }
-
-        .profile-img-large {
-            width: 200px;
-            height: 200px;
-            border-radius: 15px;
-            border: 3px solid var(--gold);
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .founder-name {
-            color: var(--maroon);
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin: 0;
-            line-height: 1.2;
-        }
-
-        .founder-title-label {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 0.75rem;
+        nav.main-nav a {
+            color: white; 
+            text-decoration: none; 
+            font-weight: 600; 
             text-transform: uppercase;
-            margin-top: 5px;
-            display: block;
+            font-size: 0.8rem; 
+            padding: 10px 15px; 
+            transition: 0.3s;
+            border-radius: 4px;
         }
 
-        .founder-bio-column {
-            flex: 1;
+        nav.main-nav a:hover { 
+            color: var(--gold); 
+            background: rgba(255,255,255,0.1);
         }
 
-        /* --- BOARD GRID --- */
-        .board-grid {
+        /* --- CONTENT CONTAINER --- */
+        .portal-container { 
+            max-width: 1400px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+        }
+        
+        .impact-card {
+            background: var(--glass);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .section-intro { text-align: center; margin-bottom: 60px; }
+        .section-intro h1 { color: var(--maroon); font-size: 2.5rem; margin: 0; }
+        .divider { width: 80px; height: 4px; background: var(--gold); margin: 20px auto; }
+
+        /* --- ALBUM & VIDEO GRID --- */
+        .album-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
-        .member-card {
+        .album-card {
             background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: 0.4s;
+            position: relative;
+            cursor: pointer;
             border: 1px solid #eee;
-            border-radius: 25px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: 0.3s;
         }
 
-        .passport-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid var(--maroon);
+        .album-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+
+        .album-cover {
+            width: 100%;
+            height: 250px;
             object-fit: cover;
+            transition: 0.5s;
         }
 
-        /* --- STANDARDIZED FOOTER --- */
+        .album-overlay-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            z-index: 2;
+        }
+
+        .video-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .album-body { padding: 25px; }
+        .album-body h3 { margin: 0 0 10px; color: var(--maroon); font-size: 1.3rem; }
+        .album-body p { color: #555; font-size: 0.95rem; line-height: 1.5; }
+        
+        .view-more-trigger {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--gold);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        /* --- FOOTER --- */
         footer {
             background: var(--maroon);
             color: white;
             padding: 70px 5% 40px;
-            border-top: 5px solid var(--gold);
+            border-top: 6px solid var(--gold);
+            margin-top: 50px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
+            grid-template-columns: repeat(3, 1fr);
             gap: 50px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .footer-col h4 { color: var(--gold); margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; }
-        .footer-col p, .footer-col li { font-size: 0.95rem; opacity: 0.9; line-height: 1.8; }
-
         @media (max-width: 900px) {
-            .founder-container { flex-direction: column; text-align: center; }
-            .founder-profile-column { margin: 0 auto 20px auto; }
-            .footer-grid { grid-template-columns: 1fr; }
+            .footer-grid, .album-grid { grid-template-columns: 1fr; }
+            .header-title { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -161,89 +175,99 @@
 
     <header class="portal-header">
         <div class="header-title">HKSAI Leadership Portal</div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="board.html">Board Members</a>
+            <a href="dashboard.html">Staff Portfolio</a>
+            <a href="programs.html">Programs</a>
+            <a href="gallery.html">Media Centre</a>
+            <a href="donate.html" style="border: 1px solid var(--gold); color: var(--gold);">Donate Now</a>
+        </nav>
     </header>
 
     <div class="portal-container">
-        <div class="content-card">
+        <div class="impact-card">
             
-            <div class="founder-container">
-                <div class="founder-profile-column">
-                    <img src="EM.png" alt="Melvine Praxides Ouyo" class="profile-img-large">
-                    <h3 class="founder-name">Melvine Praxides Ouyo</h3>
-                    <span class="founder-title-label">Founder & Executive Director</span>
-                </div>
+            <div class="section-intro">
+                <h1>Impact & Field Media</h1>
+                <p>Browse our verified albums and video reports to see how your support is transforming lives across Kenya.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="album-grid">
                 
-                <div class="founder-bio-column">
-                    <p style="margin-top: 0;">Melvine Praxides Ouyo is a seasoned Public Health and Policy expert with two decades of experience. A Mid-Career Master’s graduate from the <strong>Harvard Kennedy School</strong>, she founded HKSAI to reverse the structural biases that expose women and girls to gender-based violence, forced marriage, and educational inequity.</p>
-                    <p>Drawing from her background as a reproductive health care provider and advocate, Melvine focuses on global health policy reforms and community development. Her mission is to empower Kenya’s most vulnerable communities by building sustainable pathways through education, health, and vocational empowerment.</p>
+                <div class="album-card">
+                    <span class="album-overlay-badge">24 PHOTOS</span>
+                    <img src="H1.jpeg" class="album-cover" alt="Health Clinic">
+                    <div class="album-body">
+                        <h3>Community Health Clinics</h3>
+                        <p>Direct glimpses into our reproductive health outreach in Kibera and Laini Saba informal settlements.</p>
+                        <span class="view-more-trigger">View Full Album <i class="fas fa-chevron-right"></i></span>
+                    </div>
                 </div>
+
+                <div class="album-card">
+                    <span class="album-overlay-badge" style="background: var(--gold); color: var(--maroon);">VIDEO</span>
+                    <div style="position: relative;">
+                        <img src="EM.png" class="album-cover" alt="Video Placeholder">
+                        <i class="fas fa-play-circle video-play-icon"></i>
+                    </div>
+                    <div class="album-body">
+                        <h3>Voices of Resilience</h3>
+                        <p>Watch powerful stories from our beneficiaries and their journey toward economic independence.</p>
+                        <span class="view-more-trigger">Watch Videos <i class="fas fa-play"></i></span>
+                    </div>
+                </div>
+
+                <div class="album-card">
+                    <span class="album-overlay-badge">18 PHOTOS</span>
+                    <img src="EM.png" class="album-cover" alt="Students">
+                    <div class="album-body">
+                        <h3>Scholarship Cohort 2024</h3>
+                        <p>Portraits and academic milestones of the 550+ students currently supported by HKSAI education grants.</p>
+                        <span class="view-more-trigger">View Full Album <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="album-card">
+                    <span class="album-overlay-badge">40 PHOTOS</span>
+                    <img src="H1.jpeg" class="album-cover" alt="Training">
+                    <div class="album-body">
+                        <h3>Vocational Excellence</h3>
+                        <p>Showcasing the technical skills acquisition in our tailoring, IT, and entrepreneurial empowerment hubs.</p>
+                        <span class="view-more-trigger">View Full Album <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+
             </div>
 
-            <h2 style="color: var(--maroon); text-align: center; margin-bottom: 40px; text-transform: uppercase;">Board of Directors</h2>
-            
-            <div class="board-grid">
-                <div class="member-card">
-                    <img src="EM.png" class="passport-photo">
-                    <h3>Eunice Murambi</h3>
-                    <p style="color:var(--gold); font-weight:bold; font-size:0.8rem;">CHAIRLADY</p>
-                    <p class="bio">Leading the board with strategic oversight and a commitment to HKSAI’s mission for youth empowerment.</p>
-                </div>
-
-                <div class="member-card">
-                    <img src="EM.png" class="passport-photo">
-                    <h3>Rebecca Harrington</h3>
-                    <p style="color:var(--gold); font-weight:bold; font-size:0.8rem;">BOARD MEMBER</p>
-                    <p class="bio">Senior Director of Advocacy and Outreach at Population Connection. Expert in progressive organizing for reproductive health.</p>
-                </div>
-
-                <div class="member-card">
-                    <img src="EM.png" class="passport-photo">
-                    <h3>Raila Opany</h3>
-                    <p style="color:var(--gold); font-weight:bold; font-size:0.8rem;">BOARD MEMBER</p>
-                    <p class="bio">Educationist and Peace Ambassador. Founder of Humane Initiative and regional director at One African Child Foundation.</p>
-                </div>
-
-                <div class="member-card">
-                    <img src="EM.png" class="passport-photo">
-                    <h3>Dr. Jallicia Jolly</h3>
-                    <p style="color:var(--gold); font-weight:bold; font-size:0.8rem;">BOARD MEMBER</p>
-                    <p class="bio">Assistant Professor at Amherst College. Researcher focused on Black women’s health and health equity.</p>
-                </div>
-
-                <div class="member-card">
-                    <img src="EM.png" class="passport-photo">
-                    <h3>Kevin Owino</h3>
-                    <p style="color:var(--gold); font-weight:bold; font-size:0.8rem;">BOARD MEMBER</p>
-                    <p class="bio">Tech Entrepreneur and Co-founder at Nestict Infotech. Specialized in IT solutions and business automation.</p>
-                </div>
-
-                <div class="member-card">
-                    <img src="EM.png" class="passport-photo">
-                    <h3>Lauren Salmiery</h3>
-                    <p style="color:var(--gold); font-weight:bold; font-size:0.8rem;">ADVISORY TEAM</p>
-                    <p class="bio">Communications professional at USAID with a decade of experience in global health policy and reproductive advocacy.</p>
-                </div>
+            <div style="background: #fff9e6; margin-top: 60px; padding: 40px; border-radius: 20px; text-align: center; border: 2px dashed var(--gold);">
+                <h2 style="color: var(--maroon);">Transparent Impact. Real Stories.</h2>
+                <p>Your partnership allows us to expand these field operations to reach more vulnerable youth and women.</p>
+                <a href="donate.html" style="display:inline-block; background: var(--maroon); color: white; padding: 15px 35px; text-decoration: none; border-radius: 5px; font-weight: 800; margin-top: 15px; text-transform: uppercase;">Support a Project Today</a>
             </div>
+
         </div>
     </div>
 
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Our Vision 2030</h4>
-                <p>To strengthen internal capacity, governance, and financial stability to advance inclusive education and health access for youth in Kenya's informal settlements.</p>
+                <h4>Mission 2030</h4>
+                <p>Dedicated to dismantling structural biases and providing youth in informal settlements with a path to dignity and health.</p>
             </div>
             <div class="footer-col">
-                <h4>Strategic Goals</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li>• 80% Graduate Employment</li>
-                    <li>• 60% Non-Grant Income</li>
-                    <li>• Policy Influence</li>
+                <h4>Quick Links</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <li><a href="#" style="color: white; text-decoration: none;">• Annual Reports</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">• Strategy 2030</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">• Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact Support</h4>
-                <p>Kibera, Laini Saba, Nairobi<br>info@hopeksai.org<br>+254 748 432 400</p>
+                <h4>Contact HQ</h4>
+                <p>Kibera, Nairobi, Kenya<br>info@hopeksai.org<br>+254 748 432 400</p>
             </div>
         </div>
     </footer>
