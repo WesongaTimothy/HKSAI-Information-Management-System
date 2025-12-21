@@ -3,59 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HKSAI Donor Tracking System">
-    <meta name="author" content="HKSAI Team">
-    <title>HKSAI Donor Tracking</title>
+    <title>Management Home | HKSAI Control Center</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f2f5; }
-        header { background: #1E3A8A; color: white; padding: 1rem; text-align: center; }
-        nav { background: #2563EB; padding: 0.5rem; }
-        nav a { color: white; margin: 0 1rem; text-decoration: none; }
-        main { padding: 2rem; }
-        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        table, th, td { border: 1px solid #ccc; }
-        th, td { padding: 0.5rem; text-align: left; }
-        .button { padding: 0.5rem 1rem; background: #2563EB; color: white; border: none; cursor: pointer; }
-        .button:hover { background: #1D4ED8; }
+        :root {
+            --maroon: #800000;
+            --maroon-dark: #600000;
+            --gold: #D4AF37;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.96);
+            --gray-bg: #f4f4f4;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('H1.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            font-size: 0.88rem;
+            color: #333;
+        }
+
+        /* --- NAVIGATION --- */
+        header.portal-nav {
+            background: var(--maroon);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand { color: var(--gold); font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+        .user-status { color: white; display: flex; align-items: center; gap: 15px; }
+        .badge { background: var(--gold); color: var(--maroon); padding: 2px 10px; border-radius: 5px; font-weight: 800; font-size: 0.7rem; }
+        
+        .logout-link { color: white; text-decoration: none; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 6px; }
+
+        /* --- LAYOUT --- */
+        .wrapper {
+            max-width: 1300px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 25px;
+            padding: 0 20px;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 20px;
+            height: fit-content;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .sidebar h4 { color: var(--maroon); font-size: 0.7rem; text-transform: uppercase; margin: 20px 0 10px; border-bottom: 1px solid #ddd; }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            color: #444;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            transition: 0.2s;
+        }
+        .nav-link:hover, .nav-link.active { background: var(--maroon); color: white; }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        .section-title { color: var(--maroon); border-left: 4px solid var(--gold); padding-left: 10px; margin-bottom: 20px; }
+
+        /* --- DASHBOARD WIDGETS --- */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .widget {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        /* --- NEWS & DONATION STYLES --- */
+        .stat-box { background: var(--maroon); color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 15px; }
+        .stat-box h1 { margin: 5px 0; font-size: 1.8rem; color: var(--gold); }
+
+        .list-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f4f4f4; font-size: 0.8rem; }
+        .list-item span.date { color: #999; font-size: 0.7rem; }
+
+        .btn-action {
+            background: var(--gold);
+            color: var(--maroon);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.7rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        footer { text-align: center; color: rgba(255,255,255,0.5); font-size: 0.7rem; margin-top: 30px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>HKSAI Donor Tracking System</h1>
+
+    <header class="portal-nav">
+        <a href="index.html" class="brand">HKSAI COMMAND</a>
+        <div class="user-status">
+            <span class="badge">ADMIN PORTAL</span>
+            <a href="login.html" class="logout-link">Logout</a>
+        </div>
     </header>
-    <nav>
-        <a href="#">Dashboard</a>
-        <a href="#">Donors</a>
-        <a href="#">Donations</a>
-        <a href="#">Reports</a>
-    </nav>
-    <main>
-        <h2>Recent Donations</h2>
-        <button class="button">Add Donation</button>
-        <table>
-            <thead>
-                <tr>
-                    <th>Donor Name</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Purpose</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Jane Doe</td>
-                    <td>$150</td>
-                    <td>2025-12-01</td>
-                    <td>School Supplies</td>
-                </tr>
-                <tr>
-                    <td>John Smith</td>
-                    <td>$200</td>
-                    <td>2025-12-05</td>
-                    <td>Medical Aid</td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <h4>Operations</h4>
+            <a href="#" class="nav-link active">📊 Dashboard</a>
+            <a href="#" class="nav-link">📢 News Manager</a>
+            <a href="#" class="nav-link">💰 Donations</a>
+            
+            <h4>Impact Tracking</h4>
+            <a href="#" class="nav-link">🎓 Scholars (197)</a>
+            <a href="#" class="nav-link">🏆 Graduates (21)</a>
+            
+            <h4>System</h4>
+            <a href="index.html" class="nav-link">🌐 Public Website</a>
+            <a href="#" class="nav-link">⚙️ Settings</a>
+        </aside>
+
+        <main class="main-content">
+            <h2 class="section-title">Operational Overview</h2>
+
+            <div class="dashboard-grid">
+                
+                <div class="widget">
+                    <h3 style="margin-top:0;">Donation Tracking</h3>
+                    <div class="stat-box">
+                        <small>Monthly Collection</small>
+                        <h1>KES 45,200</h1>
+                    </div>
+                    <div class="list-item">
+                        <div><strong>Anonymous</strong><br><span class="date">Scholarship Fund</span></div>
+                        <div style="color: green;">+ 5,000</div>
+                    </div>
+                    <div class="list-item">
+                        <div><strong>Global Partner</strong><br><span class="date">Dignity Kits</span></div>
+                        <div style="color: green;">+ 12,000</div>
+                    </div>
+                    <button class="btn-action">View All Transactions</button>
+                </div>
+
+                <div class="widget">
+                    <h3 style="margin-top:0;">Live News & Stories</h3>
+                    <p style="font-size: 0.75rem; color: #666;">Manage what appears on the public home page.</p>
+                    
+                    <div class="list-item">
+                        <div><strong>Success Story</strong><br>21 Graduates of Laini Saba...</div>
+                        <div style="color: var(--maroon);">[Active]</div>
+                    </div>
+                    <div class="list-item">
+                        <div><strong>Field Update</strong><br>197 Scholars received kits...</div>
+                        <div style="color: var(--maroon);">[Draft]</div>
+                    </div>
+                    <div class="list-item">
+                        <div><strong>Event</strong><br>Menstrual Hygiene Day 2025</div>
+                        <div style="color: #999;">[Archived]</div>
+                    </div>
+                    <button class="btn-action" style="background: var(--maroon); color: white;">+ Create New Story</button>
+                </div>
+
+                <div class="widget">
+                    <h3 style="margin-top:0;">Upload Staff Reports</h3>
+                    <div style="border: 2px dashed #ddd; padding: 20px; text-align: center; border-radius: 10px;">
+                        <p style="font-size: 0.7rem;">Upload field reports for Kibera or Uasin Gishu</p>
+                        <input type="file" id="file" style="display:none">
+                        <button class="btn-action" onclick="document.getElementById('file').click()">Select File</button>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <small><strong>Pending Reviews:</strong> 3 Reports</small>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+            <div style="margin-top: 25px; padding: 15px; background: #fffdf5; border: 1px solid var(--gold); border-radius: 10px;">
+                <strong style="color: var(--maroon);">Strategic Goal 2030 Reminder:</strong>
+                <p style="margin: 5px 0 0; font-size: 0.8rem;">We are currently at 49% of our target for Menstrual Equity distribution. Ensure all <strong>Dignity Kit</strong> donations are logged immediately for quarterly reporting.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        © 2025 HKSAI Internal Management System | Kibera, Laini Saba Operations Hub
+    </footer>
+
 </body>
 </html>
