@@ -15,7 +15,7 @@
         body {
             margin: 0;
             font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('H1.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('frontend/H1.jpeg');
             background-size: cover;
             background-attachment: fixed;
             font-size: 1rem;
@@ -72,6 +72,30 @@
             box-shadow: 0 15px 50px rgba(0,0,0,0.3);
         }
 
+        /* --- SLIDESHOW STYLES --- */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            background-color: #000;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .mySlides { display: none; height: 100%; width: 100%; }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
         /* --- VISION BLOCKS --- */
         .vision-grid {
             display: grid;
@@ -91,11 +115,11 @@
             border: 1px solid var(--gold);
         }
 
-        /* --- PROGRAMS SECTION --- */
+        /* --- PROGRAM CARDS --- */
         .program-section {
             margin-top: 50px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -104,36 +128,13 @@
             padding: 30px;
             border-radius: 20px;
             border: 1px solid #eee;
-            position: relative;
-            overflow: hidden;
             transition: 0.3s;
+            text-align: center;
         }
 
         .program-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-
-        .program-card h3 { color: var(--maroon); margin-top: 0; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
-
-        .metric {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--maroon);
-            margin: 15px 0;
-        }
-
-        .btn-donate {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: var(--maroon);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-donate:hover { background: var(--gold); color: var(--maroon); }
-
+        .metric { font-size: 2rem; font-weight: 900; color: var(--maroon); margin: 15px 0; }
+        
         /* --- FOOTER --- */
         footer {
             background: var(--maroon);
@@ -155,95 +156,40 @@
 <body>
 
     <header class="portal-header">
-        <div class="header-title">HKSAI Intergrated Information Management System</div>
+        <div class="header-title">HKSAI Integrated Information Management System</div>
         <nav class="main-nav">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="nav-active">Home</a>
             <a href="#">About Us</a>
             <a href="#">Board Members</a>
             <a href="#">Staff Portfolio</a>
-            <a href="donate.html">Programs</a> <a href="#">Media Center</a>
-            <a href="donate.html" style="border: 1px solid var(--gold); color: var(--gold);">Donate Now</a>
+            <a href="#">Programs</a> 
+            <a href="#">Media Center</a>
+            <a href="#" style="border: 1px solid var(--gold); color: var(--gold);">Donate Now</a>
         </nav>
     </header>
 
-  <div style="position: relative; width: 100%; height: 450px; border-radius: 25px; overflow: hidden; margin-bottom: 50px; background-color: #f0f0f0;">
-    <div class="slideshow-container" style="width: 100%; height: 100%; position: relative;">
-        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('frontend/H1.jpeg') center/cover; height: 100%; width: 100%; display: block;"></div>
-        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('frontend/H3.jpeg') center/cover; height: 100%; width: 100%; display: none;"></div>
-        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('frontend/H1.jpeg') center/cover; height: 100%; width: 100%; display: none;"></div>
-        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('frontend/H3.jpeg') center/cover; height: 100%; width: 100%; display: none;"></div>
-    </div>
-
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; z-index: 10; width: 90%; max-width: 800px; text-align: center;">
-        <span style="background: #D4AF37; color: #800000; padding: 8px 20px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
-            2030 Strategic Hub
-        </span>
-        <h1 style="margin: 0 0 15px; font-size: 3.5rem; text-shadow: 2px 4px 15px rgba(0,0,0,0.6); line-height: 1.1; font-weight: 800;">
-            Driving Dignity & Equity
-        </h1>
-        <p style="margin: 0 auto; font-size: 1.4rem; opacity: 0.95; font-weight: 300; max-width: 650px; text-shadow: 1px 1px 8px rgba(0,0,0,0.5);">
-            Advancing education and health access for youth in Kenya's informal settlements.
-        </p>
-    </div>
-</div>
-
-<script>
-    let slideIndex = 0;
-    function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        
-        // Ensure slides exist before running
-        if (slides.length === 0) return; 
-
-        // Hide all slides
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        
-        // Increment index and show current slide
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        slides[slideIndex-1].style.display = "block";  
-        
-        // Change image every 5 seconds
-        setTimeout(showSlides, 5000); 
-    }
-
-    // Start the slideshow
-    showSlides();
-</script>
-
-<style>
-    /* Professional Fade Transition */
-    .fade {
-        animation-name: fade;
-        animation-duration: 2.5s;
-    }
-
-    @keyframes fade {
-        from {opacity: .4} 
-        to {opacity: 1}
-    }
-</style>
-
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; z-index: 10; width: 90%; max-width: 800px; text-align: center;">
-    <span style="background: var(--gold); color: var(--maroon); padding: 8px 20px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; display: inline-block;">
-        2030 Strategic Hub
-    </span>
-    
-    <h1 style="margin: 20px 0 15px; font-size: 3.5rem; text-shadow: 2px 4px 15px rgba(0,0,0,0.6); line-height: 1.1; font-weight: 800;">
-        Driving Dignity & Equity
-    </h1>
-    
-    <p style="margin: 0 auto; font-size: 1.4rem; opacity: 0.95; font-weight: 300; max-width: 650px; text-shadow: 1px 1px 8px rgba(0,0,0,0.5);">
-        Advancing education and health access for youth in Kenya's informal settlements.
-    </p>
-</div>
-        
     <div class="portal-container">
         <div class="content-card">
             
+            <div class="slideshow-container">
+                <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('frontend/H1.jpeg') center/cover;"></div>
+                <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('frontend/H3.jpeg') center/cover;"></div>
+                <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('frontend/H1.jpeg') center/cover;"></div>
+                <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('frontend/H3.jpeg') center/cover;"></div>
+
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; z-index: 10; width: 90%; max-width: 800px; text-align: center;">
+                    <span style="background: var(--gold); color: var(--maroon); padding: 8px 20px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 20px;">
+                        2030 Strategic Hub
+                    </span>
+                    <h1 style="margin: 0 0 15px; font-size: 3.5rem; text-shadow: 2px 4px 15px rgba(0,0,0,0.6); line-height: 1.1; font-weight: 800;">
+                        Driving Dignity & Equity
+                    </h1>
+                    <p style="margin: 0 auto; font-size: 1.4rem; opacity: 0.95; font-weight: 300; max-width: 650px; text-shadow: 1px 1px 8px rgba(0,0,0,0.5);">
+                        Advancing education and health access for youth in Kenya's informal settlements.
+                    </p>
+                </div>
+            </div>
+
             <div style="text-align: center; margin-bottom: 40px;">
                 <h2 style="color: var(--maroon); margin-bottom: 10px;">2030 Strategic Vision: Horizon Plan</h2>
                 <div class="vision-grid">
@@ -254,111 +200,50 @@
                     <div class="vision-block">Health Access</div>
                 </div>
             </div>
-            
+
             <div style="margin-top: 60px;">
-    <h2 style="text-align: center; color: var(--maroon); margin-bottom: 40px; font-size: 2rem;">Our Reaffirmed Core Values</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-        
-        <div class="value-item" style="background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div style="color: var(--maroon); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                <span style="background: var(--maroon); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">01</span>
-                Humanity
+                <h2 style="text-align: center; color: var(--maroon); margin-bottom: 40px; font-size: 2rem;">Our Reaffirmed Core Values</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                    <div class="program-card">
+                        <div style="color: var(--maroon); font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">Humanity</div>
+                        <p style="font-size: 0.9rem; line-height: 1.6; color: #555;">We believe in the inherent dignity, worth, and potential of every individual. We center compassion and empathy in everything we do.</p>
+                    </div>
+                    <div class="program-card">
+                        <div style="color: var(--maroon); font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">Innovation</div>
+                        <p style="font-size: 0.9rem; line-height: 1.6; color: #555;">We embrace bold ideas and creative solutions to drive lasting impact, challenging norms and pioneering new pathways.</p>
+                    </div>
+                    <div class="program-card">
+                        <div style="color: var(--maroon); font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">Integrity</div>
+                        <p style="font-size: 0.9rem; line-height: 1.6; color: #555;">We uphold honesty, transparency, and accountability, building trust through ethical practices and principled leadership.</p>
+                    </div>
+                </div>
             </div>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0;">
-                We believe in the inherent dignity, worth, and potential of every individual. We center compassion and empathy, treating every adolescent with care and respect regardless of background.
-            </p>
-        </div>
 
-        <div class="value-item" style="background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div style="color: var(--maroon); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                <span style="background: var(--maroon); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">02</span>
-                Innovation
-            </div>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0;">
-                We embrace bold ideas and creative solutions. We seek smarter, adaptive approaches to meet evolving needs, challenging norms and pioneering new pathways for impact.
-            </p>
-        </div>
-
-        <div class="value-item" style="background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div style="color: var(--maroon); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                <span style="background: var(--maroon); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">03</span>
-                Inclusiveness
-            </div>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0;">
-                Committed to equity, representation, and belonging. We ensure every voice, especially marginalized girls and youth, is heard, valued, and reflected in our programs.
-            </p>
-        </div>
-
-        <div class="value-item" style="background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div style="color: var(--maroon); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                <span style="background: var(--maroon); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">04</span>
-                Integrity
-            </div>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0;">
-                We uphold honesty, transparency, and accountability. We act with courage and consistency, building trust with donors and communities through ethical practices.
-            </p>
-        </div>
-
-        <div class="value-item" style="background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div style="color: var(--maroon); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                <span style="background: var(--maroon); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">05</span>
-                Partnership
-            </div>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0;">
-                We thrive through collective action. We believe lasting impact is achieved by working hand-in-hand with community leaders, public institutions, and changemakers.
-            </p>
-        </div>
-
-        <div class="value-item" style="background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div style="color: var(--maroon); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                <span style="background: var(--maroon); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">06</span>
-                Collaboration
-            </div>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0;">
-                Harnessing our collective strengths for the greater good. We foster a culture of shared purpose to advance inclusive education and health access.
-            </p>
-        </div>
-
-    </div>
-</div>
-
-<style>
-    .value-item:hover {
-        border-color: var(--gold) !important;
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(128, 0, 0, 0.1) !important;
-    }
-</style>
-
-            <div style="background: #fff9e6; padding: 30px; border-radius: 15px; margin-bottom: 50px;">
+            <div style="background: #fff9e6; padding: 40px; border-radius: 20px; margin-top: 60px; border-left: 10px solid var(--maroon);">
                 <h3 style="color: var(--maroon); margin-top: 0;">Our Enduring Mission</h3>
-                <p style="line-height: 1.6; font-size: 1.1rem; color: #444;">
+                <p style="line-height: 1.7; font-size: 1.15rem; color: #444; margin: 0;">
                     HKSAI exists to advance equitable access to education and healthcare for adolescents and youths living in Kenya’s informal settlements through community-led capacity building and strategic partnerships.
                 </p>
             </div>
 
-            <h2 style="text-align: center; color: var(--maroon); margin-bottom: 30px;">Strategic Pillars: Programs & Impact</h2>
-            
+            <h2 style="text-align: center; color: var(--maroon); margin: 60px 0 30px;">Strategic Pillars: Programs & Impact</h2>
             <div class="program-section">
                 <div class="program-card">
-                    <h3>Education Pillar</h3>
-                    <p>Scaling reach to marginalized youth through tuition, mentorship, and life skills.</p>
-                    <div class="metric">550 Students with Scholarships</div>
+                    <h3 style="color: var(--maroon); border-bottom: 2px solid var(--gold); display: inline-block;">Education Pillar</h3>
+                    <p style="margin-top: 15px;">Scaling reach through tuition support, mentorship, and life skills for marginalized youth.</p>
+                    <div class="metric">550 Students</div>
                     <p style="font-size: 0.85rem; color: #666;">Targeting 100% post-secondary transition by 2030.</p>
-                    <a href="donate.html" class="btn-donate">Support a Vulnerable Students</a>
+                    <a href="#" style="background: var(--maroon); color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; display: inline-block; margin-top: 15px;">Support Education</a>
                 </div>
 
                 <div class="program-card">
-                    <h3>Health Pillar</h3>
-                    <p>Fivefold expansion of outreach, advocacy, and health equity campaigns.</p>
-                    <div class="metric">40,000 Beneficiaries</div>
+                    <h3 style="color: var(--maroon); border-bottom: 2px solid var(--gold); display: inline-block;">Health Pillar</h3>
+                    <p style="margin-top: 15px;">Expansion of outreach, advocacy, and health equity campaigns across informal settlements.</p>
+                    <div class="metric">40,000 Lives</div>
                     <p style="font-size: 0.85rem; color: #666;">Aiming for 90% improved health behavior outcomes.</p>
-                    <a href="donate.html" class="btn-donate">Support Health Access</a>
+                    <a href="#" style="background: var(--maroon); color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; display: inline-block; margin-top: 15px;">Support Health</a>
                 </div>
             </div>
-
-            
 
         </div>
     </div>
@@ -367,23 +252,21 @@
         <div class="footer-grid">
             <div>
                 <h4 style="color: var(--gold);">Our Vision 2030</h4>
-                <p style="font-size: 0.9rem; opacity: 0.8;">To strengthen internal capacity, governance, and financial stability to advance inclusive education and health access for youth in Kenya's informal settlements.</p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">To strengthen internal capacity and financial stability to advance inclusive education and health access for youth.</p>
             </div>
             <div>
                 <h4 style="color: var(--gold);">Strategic Goals</h4>
-                <ul style="list-style: none; padding: 0; font-size: 0.85rem; opacity: 0.8; line-height: 2.5;">
-                    <li>80% Graduate Employment Rate</li>
-                    <li> Diversify Income to 60% Non-Grant</li>
-                    <li>Complete MEL Framework Integration</li>
-                    <li> National Policy Influence</li>
+                <ul style="list-style: none; padding: 0; font-size: 0.85rem; opacity: 0.8; line-height: 2;">
+                    <li>✓ 80% Graduate Employment Rate</li>
+                    <li>✓ 60% Non-Grant Income Diversification</li>
+                    <li>✓ National Policy Influence</li>
                 </ul>
             </div>
             <div>
-                <h4 style="color: var(--gold);">Contact Support</h4>
-                <p style="font-size: 0.9rem; opacity: 0.8; line-height: 2.3;"">
+                <h4 style="color: var(--gold);">Contact</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">
                     Kibera, Laini Saba, Nairobi<br>
-                    Email: info@hopeksai.org<br>
-                    Phone: +254 748 432 400
+                    Email: info@hopeksai.org
                 </p>
             </div>
         </div>
@@ -391,6 +274,23 @@
             © 2025 HKSAI | Leading independent, dignified and healthy lives.
         </div>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (slides.length === 0) return; 
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+        showSlides();
+    </script>
 
 </body>
 </html>
