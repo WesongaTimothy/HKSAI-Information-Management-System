@@ -19,7 +19,8 @@
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            font-size: 1rem; /* Medium standardized font size */
+            /* Standardized Medium Font Size */
+            font-size: 1rem; 
             color: #333;
             line-height: 1.6;
         }
@@ -51,7 +52,7 @@
             padding: 8px 15px;
         }
 
-        /* --- CONTAINER --- */
+        /* --- MAIN CONTAINER --- */
         .portal-container {
             max-width: 1200px;
             margin: 40px auto;
@@ -106,7 +107,10 @@
             transition: 0.3s;
         }
 
-        .member-card:hover { transform: translateY(-8px); border-color: var(--gold); }
+        .member-card:hover { 
+            transform: translateY(-8px); 
+            border-color: var(--gold); 
+        }
 
         .passport-photo {
             width: 120px;
@@ -118,8 +122,8 @@
         }
 
         .member-card h3 { color: var(--maroon); margin: 10px 0 5px; font-size: 1.25rem; }
-        .member-card .role { color: var(--gold); font-weight: 700; font-size: 0.85rem; margin-bottom: 15px; text-transform: uppercase; }
-        .member-card .bio { font-size: 0.95rem; color: #555; line-height: 1.5; text-align: justify; }
+        .member-card .role { color: var(--gold); font-weight: 700; font-size: 0.85rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .member-card .bio { font-size: 0.95rem; color: #555; line-height: 1.5; text-align: center; }
 
         /* --- STANDARDIZED FOOTER --- */
         footer {
@@ -138,8 +142,19 @@
             margin: 0 auto;
         }
 
-        .footer-col h4 { color: var(--gold); margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; }
-        .footer-col p, .footer-col li { font-size: 0.95rem; opacity: 0.9; line-height: 1.8; }
+        .footer-col h4 { 
+            color: var(--gold); 
+            margin-bottom: 20px; 
+            font-size: 1.1rem; 
+            text-transform: uppercase; 
+        }
+
+        .footer-col p, .footer-col li { 
+            font-size: 0.95rem; /* Medium Font */
+            opacity: 0.9; 
+            line-height: 1.8; 
+        }
+
         .footer-col ul { list-style: none; padding: 0; }
 
         @media (max-width: 992px) {
@@ -165,11 +180,11 @@
         <div class="content-card">
             
             <div class="founder-box">
-                <img src="EM.png" alt="Melvine Ouyo" class="profile-img-large">
+                <img src="EM.png" alt="Melvine Praxides Ouyo" class="profile-img-large">
                 <div>
                     <h2 style="color: var(--maroon); margin-top: 0;">Melvine Praxides Ouyo</h2>
                     <p style="color:var(--gold); font-weight:bold; margin-bottom:10px;">Founder & Executive Director</p>
-                    <p style="font-size: 1rem;">Seasoned Public Health expert with 20 years of experience. Founder of HKSAI, committed to transforming the lives of girls in Kenya’s urban slums through strategic investments in education and health.</p>
+                    <p style="font-size: 1rem;">Seasoned Public Health and Policy expert with two decades of experience. Melvine founded HKSAI to transform the lives of adolescent girls in Kenya’s informal settlements through education and health equity.</p>
                 </div>
             </div>
 
@@ -181,10 +196,78 @@
                     <img src="EM.png" alt="Eunice Murambi" class="passport-photo">
                     <h3>Eunice Murambi</h3>
                     <p class="role">Chairlady</p>
-                    <p class="bio">Leading the board with strategic oversight and a commitment to HKSAI’s mission for youth empowerment and organizational excellence.</p>
+                    <p class="bio">Leading the board with strategic oversight and a commitment to HKSAI’s mission for youth empowerment.</p>
                 </div>
 
                 <div class="member-card">
                     <img src="EM.png" alt="Rebecca Harrington" class="passport-photo">
                     <h3>Rebecca Harrington</h3>
-                    <p class="role">Board Member</
+                    <p class="role">Board Member</p>
+                    <p class="bio">Senior Director of Advocacy and Outreach at Population Connection. Expert in progressive organizing for reproductive health and rights.</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="EM.png" alt="Raila Opany" class="passport-photo">
+                    <h3>Raila Opany</h3>
+                    <p class="role">Board Member</p>
+                    <p class="bio">Educationist and Peace Ambassador. Founder of Humane Initiative and regional director at One African Child Foundation.</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="EM.png" alt="Dr. Jallicia Jolly" class="passport-photo">
+                    <h3>Dr. Jallicia Jolly</h3>
+                    <p class="role">Board Member</p>
+                    <p class="bio">Assistant Professor at Amherst College. Researcher focused on Black women’s health, HIV/AIDS equity, and reproductive justice.</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="EM.png" alt="Kevin Owino" class="passport-photo">
+                    <h3>Kevin Owino</h3>
+                    <p class="role">Board Member</p>
+                    <p class="bio">Tech Entrepreneur and Co-founder at Nestict Infotech. Specialized in IT solutions and business process automation.</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="EM.png" alt="Lauren Salmiery" class="passport-photo">
+                    <h3>Lauren Salmiery</h3>
+                    <p class="role">Advisory Team</p>
+                    <p class="bio">Communications professional at USAID with a decade of experience in global health policy and reproductive health advocacy.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Our Vision 2030</h4>
+                <p>To strengthen internal capacity, governance, and financial stability to advance inclusive education and health access for youth in Kenya's informal settlements.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Strategic Goals</h4>
+                <ul>
+                    <li>• 80% Graduate Employment Rate</li>
+                    <li>• 60% Non-Grant Income Diversification</li>
+                    <li>• National Policy Influence</li>
+                    <li>• Complete MEL Integration</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact Support</h4>
+                <p>
+                    Kibera, Laini Saba, Nairobi<br>
+                    <strong>Email:</strong> info@hopeksai.org<br>
+                    <strong>Phone:</strong> +254 748 432 400
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; font-size: 0.85rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
+            © 2025 HKSAI | Leading independent, dignified and healthy lives.
+        </div>
+    </footer>
+
+</body>
+</html>
