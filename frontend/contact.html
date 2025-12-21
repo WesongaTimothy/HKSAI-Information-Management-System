@@ -10,13 +10,12 @@
             --maroon: #800000;
             --gold: #D4AF37;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.94);
+            --glass: rgba(255, 255, 255, 0.96);
         }
 
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            /* BACKGROUND PHOTO: High-impact visual from your HKSAI collection */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('H1.jpeg');
             background-size: cover;
             background-attachment: fixed;
@@ -44,7 +43,8 @@
         }
 
         .logo { color: var(--gold); font-weight: bold; text-decoration: none; font-size: 1.2rem; }
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.9rem; }
+        nav a:hover { color: var(--gold); }
 
         /* --- CONTENT GRID --- */
         .contact-grid {
@@ -55,17 +55,19 @@
         }
 
         .info-side h2 { color: var(--maroon); font-size: 2.2rem; margin-bottom: 10px; }
+        .info-side p { color: #444; line-height: 1.6; }
         
         .contact-method {
-            margin: 25px 0;
+            margin: 20px 0;
             padding: 15px;
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: 0.3s;
+            border: 1px solid #eee;
         }
 
-        .contact-method:hover { transform: scale(1.02); }
+        .contact-method:hover { transform: translateY(-3px); border-color: var(--gold); }
 
         .contact-link {
             text-decoration: none;
@@ -75,15 +77,15 @@
             gap: 15px;
         }
 
-        .contact-link strong { color: var(--maroon); display: block; font-size: 1.1rem; }
-        .contact-link span { color: var(--text-muted); font-size: 1rem; }
+        .contact-link strong { color: var(--maroon); display: block; font-size: 1.05rem; }
+        .contact-link span { color: #666; font-size: 0.95rem; }
 
-        /* --- SOCIAL & CHAT BUTTONS --- */
+        /* --- ACTION BUTTONS --- */
         .action-group {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .btn-action {
@@ -91,7 +93,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -99,26 +101,51 @@
         }
 
         .btn-whatsapp { background: #25D366; color: white; }
+        .btn-whatsapp:hover { background: #128C7E; transform: scale(1.05); }
         .btn-email { background: var(--maroon); color: white; }
+        .btn-email:hover { background: var(--maroon-dark); transform: scale(1.05); }
+
+        /* --- COLORED SOCIAL LINKS --- */
+        .social-section {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .social-section h4 {
+            color: var(--maroon);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
 
         .social-links {
-            margin-top: 30px;
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
 
         .social-tag {
-            background: #f0f0f0;
-            color: #333;
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 8px 15px;
+            border-radius: 20px;
             text-decoration: none;
             font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
             transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .social-tag:hover { background: var(--gold); }
+        .social-tag:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        /* Platform Specific Colors */
+        .fb { background: #1877F2; }
+        .li { background: #0077B5; }
+        .tw { background: #000000; } /* X / Twitter black */
+        .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .tk { background: #010101; }
+        .yt { background: #FF0000; }
 
         /* --- FORM --- */
         .form-side {
@@ -135,6 +162,7 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             box-sizing: border-box;
+            font-size: 0.9rem;
         }
 
         .btn-send {
@@ -146,6 +174,8 @@
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
@@ -158,6 +188,7 @@
         <a href="index.html" class="logo">HOPE KSAI</a>
         <nav>
             <a href="projects.html">Initiatives</a>
+            <a href="support.html">Support Us</a>
             <a href="dashboard.html">Impact</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -166,13 +197,12 @@
     <main class="contact-grid">
         <div class="info-side">
             <h2>Let's Connect</h2>
-            <p>Ready to support our 2030 vision? Reach out directly via the channels below.</p>
-            
+            <p>Ready to support our 2030 vision? Reach out directly via our official channels below.</p>
             
             <div class="contact-method">
                 <a href="tel:+254748432400" class="contact-link">
                     <div>
-                        <strong>Call Us Directly</strong>
+                        <strong>Call Our Office</strong>
                         <span>+254 748 432 400</span>
                     </div>
                 </a>
@@ -181,7 +211,7 @@
             <div class="contact-method">
                 <a href="mailto:info@hopeksai.org" class="contact-link">
                     <div>
-                        <strong>Email HKSAI</strong>
+                        <strong>Official Email</strong>
                         <span>info@hopeksai.org</span>
                     </div>
                 </a>
@@ -192,13 +222,16 @@
                 <a href="mailto:info@hopeksai.org" class="btn-action btn-email">Open Gmail</a>
             </div>
 
-            <div class="social-links">
-                <a href="https://www.facebook.com/HKSAIorg" class="social-tag">Facebook</a>
-                <a href="https://www.linkedin.com/company/106997266/" class="social-tag">LinkedIn</a>
-                <a href="https://x.com/HKSAI27872" class="social-tag">X / Twitter</a>
-                <a href="https://www.instagram.com/hopeksai/" class="social-tag">Instagram</a>
-                <a href="https://www.tiktok.com/@hksai0" class="social-tag">TikTok</a>
-                <a href="https://www.youtube.com/@hopeksai" class="social-tag">YouTube</a>
+            <div class="social-section">
+                <h4>Follow Our Impact</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/HKSAIorg" class="social-tag fb">Facebook</a>
+                    <a href="https://www.linkedin.com/company/106997266/" class="social-tag li">LinkedIn</a>
+                    <a href="https://x.com/HKSAI27872" class="social-tag tw">X / Twitter</a>
+                    <a href="https://www.instagram.com/hopeksai/" class="social-tag ig">Instagram</a>
+                    <a href="https://www.tiktok.com/@hksai0" class="social-tag tk">TikTok</a>
+                    <a href="https://www.youtube.com/@hopeksai" class="social-tag yt">YouTube</a>
+                </div>
             </div>
         </div>
 
@@ -207,7 +240,7 @@
             <form>
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Tell us how you would like to support HKSAI..." rows="6" required></textarea>
+                <textarea placeholder="How would you like to partner with HKSAI?" rows="6" required></textarea>
                 <button type="submit" class="btn-send">Send Inquiry</button>
             </form>
         </div>
