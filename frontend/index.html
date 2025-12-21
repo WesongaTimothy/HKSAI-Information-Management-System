@@ -166,13 +166,66 @@
         </nav>
     </header>
 
-    <div style="position: relative; width: 100%; height: 450px; border-radius: 25px; overflow: hidden; margin-bottom: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid rgba(212, 175, 55, 0.3);">
+  <div style="position: relative; width: 100%; height: 450px; border-radius: 25px; overflow: hidden; margin-bottom: 50px; background-color: #f0f0f0;">
     <div class="slideshow-container" style="width: 100%; height: 100%; position: relative;">
-        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('H1.jpeg') center/cover; height: 100%; width: 100%; display: none;"></div>
-        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('../frontend/H1.jpeg') center/cover; height: 100%; width: 100%; display: none;"></div>
-        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('../frontend/H3.jpg') center/cover; height: 100%; width: 100%; display: none;"></div>
-        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('../frontend/h4.jpg') center/cover; height: 100%; width: 100%; display: none;"></div>
+        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('frontend/H1.jpeg') center/cover; height: 100%; width: 100%; display: block;"></div>
+        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('frontend/H3.jpeg') center/cover; height: 100%; width: 100%; display: none;"></div>
+        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('frontend/H1.jpeg') center/cover; height: 100%; width: 100%; display: none;"></div>
+        <div class="mySlides fade" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('frontend/H3.jpeg') center/cover; height: 100%; width: 100%; display: none;"></div>
     </div>
+
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; z-index: 10; width: 90%; max-width: 800px; text-align: center;">
+        <span style="background: #D4AF37; color: #800000; padding: 8px 20px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px;">
+            2030 Strategic Hub
+        </span>
+        <h1 style="margin: 0 0 15px; font-size: 3.5rem; text-shadow: 2px 4px 15px rgba(0,0,0,0.6); line-height: 1.1; font-weight: 800;">
+            Driving Dignity & Equity
+        </h1>
+        <p style="margin: 0 auto; font-size: 1.4rem; opacity: 0.95; font-weight: 300; max-width: 650px; text-shadow: 1px 1px 8px rgba(0,0,0,0.5);">
+            Advancing education and health access for youth in Kenya's informal settlements.
+        </p>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        
+        // Ensure slides exist before running
+        if (slides.length === 0) return; 
+
+        // Hide all slides
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        
+        // Increment index and show current slide
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        
+        // Change image every 5 seconds
+        setTimeout(showSlides, 5000); 
+    }
+
+    // Start the slideshow
+    showSlides();
+</script>
+
+<style>
+    /* Professional Fade Transition */
+    .fade {
+        animation-name: fade;
+        animation-duration: 2.5s;
+    }
+
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+</style>
 
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; z-index: 10; width: 90%; max-width: 800px; text-align: center;">
     <span style="background: var(--gold); color: var(--maroon); padding: 8px 20px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; display: inline-block;">
