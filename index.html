@@ -3,97 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hope for Kenya Slum Adolescents Initiative (HKSAI) Management System">
-    <meta name="author" content="HKSAI Team">
-    <title>HKSAI Management System</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Management Portal | HKSAI</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f2f5; }
-        header { background: #1E3A8A; color: white; padding: 1rem; text-align: center; }
-        nav { background: #2563EB; padding: 0.5rem; text-align: center; }
-        nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        main { padding: 2rem; max-width: 1200px; margin: auto; }
-        section { margin-bottom: 3rem; }
-        h2 { color: #1E3A8A; margin-bottom: 1rem; }
-        p { color: #333; font-size: 1.1rem; line-height: 1.6; }
-        .cards { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-        .card { flex: 1; min-width: 250px; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
-        .card h3 { margin-bottom: 0.5rem; color: #1E3A8A; }
-        footer { text-align: center; padding: 1rem; background: #1E3A8A; color: white; margin-top: 2rem; }
+        :root {
+            --maroon: #800000;
+            --maroon-dark: #600000;
+            --gold: #D4AF37;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('H1.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            font-size: 0.9rem;
+        }
+
+        /* --- DASHBOARD HEADER --- */
+        .portal-header {
+            background: var(--maroon);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .user-profile { color: white; display: flex; align-items: center; gap: 10px; }
+        .user-badge { background: var(--gold); color: var(--maroon); padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.7rem; }
+
+        /* --- PORTAL LAYOUT --- */
+        .portal-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 25px;
+            padding: 0 20px;
+        }
+
+        /* --- SIDEBAR NAV --- */
+        .sidebar {
+            background: var(--glass);
+            padding: 25px;
+            border-radius: 20px;
+            height: fit-content;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .nav-group h4 { color: var(--maroon); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            color: #444;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            transition: 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active { background: var(--maroon); color: white; }
+
+        /* --- MAIN ACTION AREA --- */
+        .content-area {
+            background: var(--glass);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .action-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .action-card:hover { border-color: var(--gold); background: #fff; }
+
+        /* --- UPLOAD FORM --- */
+        .upload-zone {
+            border: 2px dashed var(--gold);
+            padding: 30px;
+            border-radius: 15px;
+            background: #fff9e6;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-upload {
+            background: var(--maroon);
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .report-list { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .report-list th { text-align: left; padding: 12px; border-bottom: 2px solid var(--maroon); color: var(--maroon); }
+        .report-list td { padding: 12px; border-bottom: 1px solid #eee; font-size: 0.85rem; }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hope for Kenya Slum Adolescents Initiative (HKSAI)</h1>
+
+    <header class="portal-header">
+        <div class="user-profile">
+            <strong>HKSAI MANAGEMENT</strong>
+            <span class="user-badge">STAFF MODE</span>
+        </div>
+        <a href="login.html" style="color: var(--gold); text-decoration: none; font-weight: bold; font-size: 0.8rem;">LOGOUT</a>
     </header>
 
-    <nav>
-        <a href="frontend/dashboard.html">Dashboard</a>
-        <a href="frontend/projects.html">Projects</a>
-        <a href="frontend/donate.html">Donate</a>
-        <a href="frontend/contact.html">Contact</a>
-    </nav>
-
-    <main>
-        <!-- Welcome / Intro -->
-        <section class="intro">
-            <h2>Welcome to HKSAI</h2>
-            <p>HKSAI empowers adolescents living in Kenya’s informal settlements through education, health programs, skills training, and community advocacy. Join us in creating a brighter future for young people.</p>
-        </section>
-
-        <!-- Vision & Mission -->
-        <section class="cards">
-            <div class="card">
-                <h3>Vision</h3>
-                <p>A society where inspired young people lead independent, dignified, and healthy lives.</p>
+    <div class="portal-container">
+        <aside class="sidebar">
+            <div class="nav-group">
+                <h4>Main Menu</h4>
+                <a href="index.html" class="nav-item">🏠 Home Page</a>
+                <a href="#" class="nav-item active">📊 Dashboard</a>
+                <a href="#" class="nav-item">📂 View Reports</a>
+                <a href="#" class="nav-item">⬆️ Upload Data</a>
+                <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+                <a href="contact.html" class="nav-item">❓ Help Desk</a>
             </div>
-            <div class="card">
-                <h3>Mission</h3>
-                <p>To advance education, health, and socioeconomic opportunities that empower adolescents and youths in Kenya’s informal settlements.</p>
-            </div>
-        </section>
+        </aside>
 
-        <!-- Core Values -->
-        <section>
-            <h2>Our Values</h2>
-            <div class="cards">
-                <div class="card"><h3>Humanity</h3><p>We act with compassion to improve lives.</p></div>
-                <div class="card"><h3>Excellence</h3><p>We deliver high-quality programs and services.</p></div>
-                <div class="card"><h3>Integrity</h3><p>We uphold transparency, honesty, and accountability.</p></div>
-                <div class="card"><h3>Respect</h3><p>We value every individual and community we serve.</p></div>
-                <div class="card"><h3>Professionalism</h3><p>We maintain high standards in all our operations.</p></div>
-                <div class="card"><h3>Fairness</h3><p>We treat everyone equitably and justly.</p></div>
-            </div>
-        </section>
+        <main class="content-area">
+            <h2 style="color: var(--maroon); margin: 0;">Board & Staff Portal</h2>
+            <p style="color: #666;">Welcome back. Use this portal to submit 2025 program updates and view historical reports.</p>
 
-        <!-- Programs -->
-        <section>
-            <h2>Our Programs</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Education Support</h3>
-                    <p>Providing mentorship, tuition support, and learning resources to adolescents.</p>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h3 style="color: var(--maroon);">View Reports</h3>
+                    <p>Access SCRA Training and Scholarship data.</p>
+                    <table class="report-list">
+                        <tr><th>Report Name</th><th>Date</th></tr>
+                        <tr><td>Q3 Education.pdf</td><td>Oct 2025</td></tr>
+                        <tr><td>Kibera_Grads.xlsx</td><td>Dec 2025</td></tr>
+                    </table>
                 </div>
-                <div class="card">
-                    <h3>Health Programs</h3>
-                    <p>Promoting adolescent health, menstrual hygiene, and awareness initiatives.</p>
-                </div>
-                <div class="card">
-                    <h3>Skills & Empowerment</h3>
-                    <p>Vocational training, digital literacy, and entrepreneurship support.</p>
-                </div>
-                <div class="card">
-                    <h3>Advocacy & Community</h3>
-                    <p>Strengthening community structures and influencing policy for adolescent rights.</p>
+
+                <div class="action-card">
+                    <h3 style="color: var(--maroon);">Submit Report</h3>
+                    <div class="upload-zone">
+                        <p>Drag & Drop Report Files Here</p>
+                        <input type="file" id="reportFile" style="display: none;">
+                        <button class="btn-upload" onclick="document.getElementById('reportFile').click()">Browse Files</button>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        &copy; 2025 HKSAI. All Rights Reserved. <br>
-        <a href="https://www.hopeksai.org" style="color:white; text-decoration: underline;">www.hopeksai.org</a>
+            <div style="margin-top: 30px; background: #fff; padding: 20px; border-radius: 15px; border-left: 5px solid var(--gold);">
+                <strong style="color: var(--maroon);">Staff Notice:</strong>
+                <p style="margin: 5px 0 0; font-size: 0.85rem;">All monthly reports for the **21 SCRA Graduates** must be uploaded by the 25th of the month.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer style="text-align: center; color: rgba(255,255,255,0.6); padding: 20px; font-size: 0.75rem;">
+        © 2025 HKSAI Management System | Secure Internal Access Only
     </footer>
+
 </body>
 </html>
