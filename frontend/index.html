@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HKSAI | 2030 Strategic Hub</title>
+    <title>Media & Impact Hub | HKSAI International</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --maroon: #800000;
             --gold: #D4AF37;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.92);
+            --glass: rgba(255, 255, 255, 0.98);
+            --dark: #1a1a1a;
         }
 
         body {
             margin: 0;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            /* Professional background with a blur-friendly tint */
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('H1.jpeg');
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('H1.jpeg');
             background-size: cover;
             background-attachment: fixed;
-            background-position: center;
             color: #333;
         }
 
-        /* --- HEADER & NAVIGATION --- */
+        /* --- PROFESSIONAL TOP BAR --- */
+        .top-bar {
+            background: var(--dark);
+            color: white;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
         header.portal-header {
             background: var(--maroon);
-            padding: 20px 5%;
+            padding: 30px 5%;
             border-bottom: 5px solid var(--gold);
             text-align: center;
             position: sticky;
@@ -36,261 +46,267 @@
 
         .header-title {
             color: white;
-            font-size: 1.7rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        nav.main-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        nav.main-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
+            font-size: 2rem;
+            font-weight: 900;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            padding: 8px 15px;
-            transition: 0.3s;
-            border-radius: 4px;
         }
 
-        nav.main-nav a:hover { background: var(--gold); color: var(--maroon); }
-
-        /* --- MAIN CONTAINER --- */
+        /* --- WIDE CONTAINER --- */
         .portal-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1400px;
+            margin: 50px auto;
+            padding: 0 30px;
         }
 
-        .content-card {
+        .impact-card {
             background: var(--glass);
-            backdrop-filter: blur(15px); /* Modern professional blur */
-            -webkit-backdrop-filter: blur(15px);
-            padding: 50px 40px;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            padding: 80px 50px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
         }
 
-        /* --- STRATEGIC VISION BLOCKS --- */
-        .vision-grid {
+        /* --- LIVE IMPACT COUNTER --- */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin-bottom: 50px;
-        }
-
-        .vision-block {
-            background: var(--maroon);
-            color: var(--gold);
-            padding: 15px;
-            border-radius: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             text-align: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            border: 1px solid var(--gold);
+            margin-bottom: 80px;
         }
 
-        /* --- CORE VALUES GRID (3x2 Balanced) --- */
-        .values-grid {
+        .stat-item {
+            padding: 30px;
+            background: #fff9e6;
+            border-bottom: 5px solid var(--gold);
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--maroon);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #555;
+        }
+
+        /* --- MEDIA ALBUMS (Wide Layout) --- */
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.2rem;
+            color: var(--maroon);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .media-grid-wide {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 35px;
             margin-bottom: 60px;
         }
 
-        .value-item {
-            background: #fff;
-            border: 1px solid #eee;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .value-item:hover {
-            border-color: var(--gold);
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(128,0,0,0.1);
-        }
-
-        .value-circle {
-            background: var(--maroon);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-
-        /* --- PROGRAM PILLARS --- */
-        .program-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .program-card {
+        .album-box {
             background: white;
-            padding: 35px;
             border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: 0.4s;
+        }
+
+        .album-box:hover { transform: translateY(-15px); }
+
+        .image-container {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        .album-content { padding: 25px; }
+
+        /* --- VIDEO SECTION --- */
+        .featured-video {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            background: #f4f4f4;
+            padding: 40px;
+            border-radius: 25px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .video-player {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        /* --- PRESS & TRANSPARENCY --- */
+        .press-transparency {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+
+        .report-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .report-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 10px;
             border-left: 5px solid var(--maroon);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            transition: 0.3s;
         }
-
-        .program-card:hover { transform: scale(1.02); border-left-color: var(--gold); }
-
-        .metric {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--maroon);
-            margin: 15px 0;
-        }
-
-        .btn-donate {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background: var(--maroon);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-donate:hover { background: var(--gold); color: var(--maroon); }
 
         /* --- FOOTER --- */
         footer {
             background: var(--maroon);
             color: white;
-            padding: 60px 5% 30px;
-            margin-top: 80px;
-            border-top: 5px solid var(--gold);
+            padding: 80px 10% 40px;
+            border-top: 8px solid var(--gold);
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
         }
 
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 992px) {
-            .values-grid { grid-template-columns: repeat(2, 1fr); }
-            .program-section { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 600px) {
-            .values-grid { grid-template-columns: 1fr; }
+        @media (max-width: 1100px) {
+            .media-grid-wide, .stats-grid, .footer-grid, .featured-video, .press-transparency {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
+    <div class="top-bar">
+        <span><i class="fas fa-globe"></i> Global Reach: Nairobi | Mombasa | Kisumu | Uasin Gishu</span>
+        <span><i class="fas fa-envelope"></i> transparency@hopeksai.org</span>
+    </div>
+
     <header class="portal-header">
-        <div class="header-title">HKSAI Integrated Information Management System</div>
-        <nav class="main-nav">
-            <a href="#">Home</a>
-            <a href="donate.html">About Us</a>
-            <a href="board.html">Board Members</a>
-            <a href="dashboard.html">Staff Portfolio</a>
-            <a href="donate.html">Programs</a>
-             <a href="gallery.html">Media Centre</a>
-            <a href="#" style="border: 1px solid var(--gold); color: var(--gold);">Donate Now</a>
-        </nav>
+        <div class="header-title">HKSAI Media & Transparency Centre</div>
     </header>
 
     <div class="portal-container">
-        <div class="content-card">
+        <div class="impact-card">
             
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="color: var(--maroon); margin-bottom: 25px; font-size: 2rem; font-weight: 800;">2030 Strategic Vision: Horizon Plan</h2>
-                <div class="vision-grid">
-                    <div class="vision-block">Institutional Capacity</div>
-                    <div class="vision-block">Governance Excellence</div>
-                    <div class="vision-block">Financial Stability</div>
-                    <div class="vision-block">Education Equity</div>
-                    <div class="vision-block">Health Access</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">40,000+</span>
+                    <span class="stat-label">Lives Impacted</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">550+</span>
+                    <span class="stat-label">Education Scholars</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Strategic Partners</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Counties Reached</span>
                 </div>
             </div>
 
-            <div style="background: #fff9e6; padding: 40px; border-radius: 20px; margin-bottom: 60px; border-left: 10px solid var(--maroon);">
-                <h3 style="color: var(--maroon); margin-top: 0; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px;">Our Enduring Mission</h3>
-                <p style="line-height: 1.5; font-size: 1.6rem; color: #444; margin: 0; font-weight: 300;">
-                    HKSAI exists to advance equitable access to education and healthcare for youth in Kenya’s informal settlements through community-led capacity building.
-                </p>
+            <div class="section-heading">
+                <h2>Field Impact Galleries</h2>
+                <a href="#" style="color: var(--maroon); font-weight: 700;">View All Archives →</a>
             </div>
 
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="color: var(--maroon); margin-bottom: 10px; font-size: 2.2rem; font-weight: 900;">Our Reaffirmed Core Values</h2>
-                <div style="width: 80px; height: 4px; background: var(--gold); margin: 0 auto 40px;"></div>
-            </div>
-            
-            <div class="values-grid">
-                <div class="value-item">
-                    <div class="value-circle">01</div>
-                    <h3 style="color: var(--maroon);">Humanity</h3>
-                    <p style="font-size: 0.95rem; color: #555;">Inherent dignity, worth, and potential of every individual through compassion and empathy.</p>
+            <div class="media-grid-wide">
+                <div class="album-box">
+                    <div class="image-container">
+                        <img src="H1.jpeg" alt="Field Work">
+                    </div>
+                    <div class="album-content">
+                        <span style="color: var(--gold); font-weight: 800; font-size: 0.7rem;">ALBUM | NAIROBI</span>
+                        <h3>Informal Settlement Outreach</h3>
+                        <p style="font-size: 0.9rem;">Documenting our health and education initiatives in the heart of Kibera.</p>
+                    </div>
                 </div>
-                <div class="value-item">
-                    <div class="value-circle">02</div>
-                    <h3 style="color: var(--maroon);">Innovation</h3>
-                    <p style="font-size: 0.95rem; color: #555;">Embracing bold ideas and creative solutions to meet evolving community needs.</p>
+
+                <div class="album-box">
+                    <div class="image-container">
+                        <img src="EM.png" alt="Training">
+                    </div>
+                    <div class="album-content">
+                        <span style="color: var(--gold); font-weight: 800; font-size: 0.7rem;">ALBUM | EMPOWERMENT</span>
+                        <h3>Vocational Graduation 2024</h3>
+                        <p style="font-size: 0.9rem;">Celebrating 120 young women entering the workforce with specialized skills.</p>
+                    </div>
                 </div>
-                <div class="value-item">
-                    <div class="value-circle">03</div>
-                    <h3 style="color: var(--maroon);">Inclusiveness</h3>
-                    <p style="font-size: 0.95rem; color: #555;">Committed to equity and belonging for every voice, especially marginalized youth.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-circle">04</div>
-                    <h3 style="color: var(--maroon);">Integrity</h3>
-                    <p style="font-size: 0.95rem; color: #555;">Upholding honesty and accountability through ethical practices and transparency.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-circle">05</div>
-                    <h3 style="color: var(--maroon);">Partnership</h3>
-                    <p style="font-size: 0.95rem; color: #555;">Thriving through collective action hand-in-hand with community leaders.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-circle">06</div>
-                    <h3 style="color: var(--maroon);">Collaboration</h3>
-                    <p style="font-size: 0.95rem; color: #555;">Harnessing collective strengths to advance inclusive education and health.</p>
+
+                <div class="album-box">
+                    <div class="image-container">
+                        <img src="H1.jpeg" alt="Health">
+                    </div>
+                    <div class="album-content">
+                        <span style="color: var(--gold); font-weight: 800; font-size: 0.7rem;">ALBUM | HEALTH</span>
+                        <h3>Reproductive Health Forum</h3>
+                        <p style="font-size: 0.9rem;">Bridging the gap in adolescent healthcare access across Kenya.</p>
+                    </div>
                 </div>
             </div>
 
-            <h2 style="text-align: center; color: var(--maroon); margin-bottom: 30px; font-size: 2rem;">Strategic Pillars & Impact</h2>
-            <div class="program-section">
-                <div class="program-card">
-                    <h3 style="color: var(--maroon);">Education Pillar</h3>
-                    <p>Scaling reach through tuition, mentorship, and life skills for the vulnerable.</p>
-                    <div class="metric">550 Scholars</div>
-                    <p style="font-size: 0.85rem; color: #666;">Targeting 100% post-secondary transition by 2030.</p>
-                    <a href="#" class="btn-donate">Support a Scholar</a>
+            <div class="featured-video">
+                <div class="video-player">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
                 </div>
+                <div>
+                    <h2 style="color: var(--maroon); margin-top: 0;">Watch Our Mission</h2>
+                    <p>Experience the day-to-day operations of HKSAI and hear directly from the beneficiaries whose lives are being transformed through your support.</p>
+                    <button style="background: var(--maroon); color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-weight: bold;">Watch More Testimonials</button>
+                </div>
+            </div>
 
-                <div class="program-card">
-                    <h3 style="color: var(--maroon);">Health Pillar</h3>
-                    <p>Expansion of outreach, advocacy, and health equity campaigns across the region.</p>
-                    <div class="metric">40,000 Beneficiaries</div>
-                    <p style="font-size: 0.85rem; color: #666;">Aiming for 90% improved health behavior outcomes.</p>
-                    <a href="#" class="btn-donate">Support Health Access</a>
+            <div class="press-transparency">
+                <div>
+                    <h2 style="color: var(--maroon);">Press & Global Recognition</h2>
+                    <div class="report-item">
+                        <span><strong>Standard Media:</strong> Empowering Slum Youth through Education</span>
+                        <a href="#" style="color: var(--gold);"><i class="fas fa-link"></i></a>
+                    </div>
+                    <div class="report-item">
+                        <span><strong>Citizen TV:</strong> Spotlight on Melvine Ouyo's Advocacy</span>
+                        <a href="#" style="color: var(--gold);"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h2 style="color: var(--maroon);">Accountability</h2>
+                    <div class="report-item" style="background: #fff9e6;">
+                        <span>2024 Annual Report</span>
+                        <a href="#" style="color: var(--maroon);"><i class="fas fa-file-pdf"></i> PDF</a>
+                    </div>
+                    <div class="report-item" style="background: #fff9e6;">
+                        <span>Strategic Plan 2030</span>
+                        <a href="#" style="color: var(--maroon);"><i class="fas fa-file-pdf"></i> PDF</a>
+                    </div>
                 </div>
             </div>
 
@@ -300,29 +316,26 @@
     <footer>
         <div class="footer-grid">
             <div>
-                <h4 style="color: var(--gold);">Our Vision 2030</h4>
-                <p style="font-size: 0.85rem; opacity: 0.8; line-height: 1.6;">Strengthening governance and financial stability to advance inclusive education and health access for youth in Kenya's informal settlements.</p>
+                <h4>Our Mission</h4>
+                <p>To uplift and empower adolescent girls in Kenya’s informal settlements through access to education, health services, and socioeconomic opportunities.</p>
             </div>
             <div>
-                <h4 style="color: var(--gold);">Strategic Goals</h4>
-                <ul style="list-style: none; padding: 0; font-size: 0.85rem; opacity: 0.8; line-height: 2.2;">
-                    <li>• 80% Graduate Employment Rate</li>
-                    <li>• Diversify Income to 60% Non-Grant</li>
-                    <li>• Complete MEL Framework Integration</li>
-                    <li>• National Policy Influence</li>
+                <h4>Transparency</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li>• Financial Audits 2024</li>
+                    <li>• Impact Assessment Reports</li>
+                    <li>• Governance Structure</li>
                 </ul>
             </div>
             <div>
-                <h4 style="color: var(--gold);">Contact Support</h4>
-                <p style="font-size: 0.85rem; opacity: 0.8; line-height: 1.8;">
-                    Kibera, Laini Saba, Nairobi<br>
-                    Email: info@hopeksai.org<br>
-                    Phone: +254 748 432 400
-                </p>
+                <h4>Global HQ</h4>
+                <p>Kibera, Laini Saba, Nairobi<br>
+                   PO BOX 12345-00100<br>
+                   <strong>Contact:</strong> +254 748 432 400</p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 50px; font-size: 0.8rem; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-            © 2025 HKSAI | Leading independent, dignified and healthy lives.
+        <div style="text-align: center; margin-top: 60px; font-size: 0.8rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+            © 2025 Hope for Kenya Slum Adolescents Initiative (HKSAI). Registered Non-Profit Organization.
         </div>
     </footer>
 
