@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board of Directors | HKSAI</title>
+    <title>Leadership & Board | HKSAI</title>
     <style>
         :root {
             --maroon: #800000;
@@ -19,7 +19,7 @@
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            font-size: 1rem;
+            font-size: 1rem; /* Medium standardized font size */
             color: #333;
             line-height: 1.6;
         }
@@ -39,7 +39,7 @@
             color: white;
             font-size: 1.6rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         nav.main-nav a {
@@ -66,7 +66,7 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.4);
         }
 
-        /* --- FOUNDER BOX --- */
+        /* --- FOUNDER HIGHLIGHT --- */
         .founder-box {
             display: grid;
             grid-template-columns: 220px 1fr;
@@ -84,8 +84,7 @@
             height: 200px;
             border-radius: 15px;
             border: 3px solid var(--gold);
-            object-fit: cover; /* Ensures image isn't stretched */
-            display: block;
+            object-fit: cover;
         }
 
         /* --- BOARD GRID --- */
@@ -100,24 +99,29 @@
             border: 1px solid #eee;
             border-radius: 20px;
             padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             transition: 0.3s;
         }
+
+        .member-card:hover { transform: translateY(-8px); border-color: var(--gold); }
 
         .passport-photo {
             width: 120px;
             height: 120px;
             border-radius: 50%;
+            margin-bottom: 15px;
             border: 3px solid var(--maroon);
             object-fit: cover;
-            margin-bottom: 15px;
         }
 
-        .member-card h3 { color: var(--maroon); margin: 10px 0 5px; }
-        .member-card .role { color: var(--gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 15px; }
-        .member-card .bio { font-size: 0.95rem; color: #555; text-align: justify; }
+        .member-card h3 { color: var(--maroon); margin: 10px 0 5px; font-size: 1.25rem; }
+        .member-card .role { color: var(--gold); font-weight: 700; font-size: 0.85rem; margin-bottom: 15px; text-transform: uppercase; }
+        .member-card .bio { font-size: 0.95rem; color: #555; line-height: 1.5; text-align: justify; }
 
-        /* --- FOOTER --- */
+        /* --- STANDARDIZED FOOTER --- */
         footer {
             background: var(--maroon);
             color: white;
@@ -127,29 +131,33 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            /* Standardized 3-column layout */
+            grid-template-columns: repeat(3, 1fr); 
             gap: 50px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .footer-col h4 { color: var(--gold); margin-bottom: 20px; text-transform: uppercase; }
+        .footer-col h4 { color: var(--gold); margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; }
         .footer-col p, .footer-col li { font-size: 0.95rem; opacity: 0.9; line-height: 1.8; }
+        .footer-col ul { list-style: none; padding: 0; }
 
         @media (max-width: 992px) {
-            .footer-grid, .founder-box, .board-grid { grid-template-columns: 1fr; }
+            .footer-grid, .board-grid, .founder-box { grid-template-columns: 1fr; }
+            .founder-box { text-align: center; justify-items: center; }
         }
     </style>
 </head>
 <body>
 
     <header class="portal-header">
-        <div class="header-title">HKSAI Integrated Management System</div>
+        <div class="header-title">HKSAI Leadership Portal</div>
         <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Board Members</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Board</a>
             <a href="#">Programs</a>
+            <a href="#" style="border: 1px solid var(--gold); color: var(--gold); border-radius: 4px;">Donate</a>
         </nav>
     </header>
 
@@ -161,63 +169,22 @@
                 <div>
                     <h2 style="color: var(--maroon); margin-top: 0;">Melvine Praxides Ouyo</h2>
                     <p style="color:var(--gold); font-weight:bold; margin-bottom:10px;">Founder & Executive Director</p>
-                    <p>A seasoned Public Health and Policy expert. Melvine founded HKSAI to empower adolescent girls in Kenya's urban slums through education, health, and vocational pathways.</p>
+                    <p style="font-size: 1rem;">Seasoned Public Health expert with 20 years of experience. Founder of HKSAI, committed to transforming the lives of girls in Kenya’s urban slums through strategic investments in education and health.</p>
                 </div>
             </div>
 
+            <h2 style="color: var(--maroon); text-align: center; margin-bottom: 40px; text-transform: uppercase;">Board of Directors</h2>
+            
             <div class="board-grid">
                 
                 <div class="member-card">
-                    <img src="rebecca_h.jpg" alt="Rebecca Harrington" class="passport-photo">
-                    <h3>Rebecca Harrington</h3>
-                    <p class="role">Board Member</p>
-                    <p class="bio">Senior Director of Advocacy and Outreach at Population Connection. Expert in global reproductive freedom campaigns.</p>
-                </div>
-
-                <div class="member-card">
-                    <img src="raila_o.jpg" alt="Raila Opany" class="passport-photo">
-                    <h3>Raila A. Opany</h3>
-                    <p class="role">Board Member</p>
-                    <p class="bio">Educationist and Peace Ambassador. Founder of the Humane Initiative and Regional Director at One African Child Foundation.</p>
-                </div>
-
-                <div class="member-card">
-                    <img src="eunice_m.jpg" alt="Eunice Murambi" class="passport-photo">
+                    <img src="EM.png" alt="Eunice Murambi" class="passport-photo">
                     <h3>Eunice Murambi</h3>
                     <p class="role">Chairlady</p>
-                    <p class="bio">Providing strategic leadership and oversight to ensure HKSAI achieves its mission of transforming lives in informal settlements.</p>
+                    <p class="bio">Leading the board with strategic oversight and a commitment to HKSAI’s mission for youth empowerment and organizational excellence.</p>
                 </div>
 
                 <div class="member-card">
-                    <img src="dr_jolly.jpg" alt="Dr. Jallicia Jolly" class="passport-photo">
-                    <h3>Dr. Jallicia Jolly</h3>
-                    <p class="role">Board Member</p>
-                    <p class="bio">Professor at Amherst College. Researcher focused on Black women’s health and reproductive justice organizing.</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Our Vision 2030</h4>
-                <p>Advancing inclusive education and health access for youth in Kenya's informal settlements.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Strategic Goals</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li>• 80% Graduate Employment</li>
-                    <li>• 60% Non-Grant Income</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Kibera, Nairobi<br>info@hopeksai.org</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <img src="EM.png" alt="Rebecca Harrington" class="passport-photo">
+                    <h3>Rebecca Harrington</h3>
+                    <p class="role">Board Member</
