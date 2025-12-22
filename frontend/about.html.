@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | HKSAI Identity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --maroon: #800000;
+            --gold: #D4AF37;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.98);
+        }
 
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.92), rgba(0,0,0,0.92)), url('H1.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* --- NAVIGATION --- */
+        header.portal-header {
+            background: var(--maroon);
+            padding: 25px 5%;
+            border-bottom: 5px solid var(--gold);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-title { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin-bottom: 15px; }
+        
+        nav.main-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+        nav.main-nav a {
+            color: white; text-decoration: none; font-weight: 600; text-transform: uppercase;
+            font-size: 0.8rem; padding: 10px 15px; transition: 0.3s; border-radius: 4px;
+        }
+        nav.main-nav a:hover { color: var(--gold); background: rgba(255,255,255,0.1); }
+
+        /* --- CONTAINER --- */
+        .portal-container { max-width: 1300px; margin: 40px auto; padding: 0 20px; }
+        
+        .about-card {
+            background: var(--glass);
+            padding: 60px 50px;
+            border-radius: 40px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+        }
+
+        /* --- HISTORY TIMELINE --- */
+        .timeline-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 60px 0;
+            text-align: center;
+            background: #fdfdfd;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+        }
+
+        .timeline-box h2 { color: var(--maroon); font-size: 2.5rem; margin-bottom: 5px; }
+        .timeline-box p { font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- MISSION & VISION --- */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .mv-card {
+            padding: 45px;
+            border-radius: 25px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-bg { background: var(--maroon); }
+        .vision-bg { background: var(--dark); background: #1a1a1a; }
+
+        /* --- WHAT WE DO (GRAPHIC GRID) --- */
+        .programs-header { text-align: center; margin-bottom: 40px; }
+        .programs-header h2 { color: var(--maroon); font-size: 2.2rem; text-transform: uppercase; }
+
+        .program-graphics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .prog-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .prog-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .prog-card i { font-size: 2.5rem; color: var(--maroon); margin-bottom: 15px; }
+        .prog-card h4 { margin: 10px 0; color: var(--maroon); font-size: 1.1rem; }
+        .prog-card p { font-size: 0.9rem; color: #666; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--maroon);
+            color: white;
+            padding: 80px 10% 40px;
+            border-top: 8px solid var(--gold);
+        }
+
+        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; }
+
+        @media (max-width: 900px) {
+            .mv-grid, .program-graphics, .footer-grid, .timeline-section { grid-template-columns: 1fr; flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="portal-header">
+        <div class="header-title">HKSAI Leadership Portal</div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="board.html">Board Members</a>
+            <a href="dashboard.html">Staff Portfolio</a>
+            <a href="programs.html">Programs</a>
+            <a href="gallery.html">Media Centre</a>
+            <a href="donate.html" style="border: 1px solid var(--gold); color: var(--gold);">Donate Now</a>
+        </nav>
+    </header>
+
+    <div class="portal-container">
+        <div class="about-card">
+            
+            <div style="text-align: center;">
+                <h1 style="color: var(--maroon); font-size: 2.8rem; margin: 0;">Who We Are</h1>
+                <p style="font-size: 1.2rem; color: #555; max-width: 800px; margin: 15px auto;">
+                    The Hope for Kenya Slum Adolescents Initiative (HKSAI) is a youth-focused nonprofit dedicated to empowering the next generation in Kenya's informal settlements.
+                </p>
+            </div>
+
+            <div class="timeline-section">
+                <div class="timeline-box">
+                    <h2>2018</h2>
+                    <p>Founded</p>
+                </div>
+                <i class="fas fa-long-arrow-alt-right fa-2x" style="color: var(--gold);"></i>
+                <div class="timeline-box">
+                    <h2>2020</h2>
+                    <p>Registered (30th April)</p>
+                </div>
+                <i class="fas fa-long-arrow-alt-right fa-2x" style="color: var(--gold);"></i>
+                <div class="timeline-box">
+                    <h2>Present</h2>
+                    <p>Operating in 4 Counties</p>
+                </div>
+            </div>
+
+            <div class="mv-grid">
+                <div class="mv-card mission-bg">
+                    <i class="fas fa-bullseye fa-3x" style="margin-bottom: 20px; color: var(--gold);"></i>
+                    <h2>Our Mission</h2>
+                    <p>To advance education, health, and socio-economic opportunities for vulnerable adolescent youth through capacity building, advocacy, referral, and linkages.</p>
+                </div>
+                <div class="mv-card vision-bg">
+                    <i class="fas fa-eye fa-3x" style="margin-bottom: 20px; color: var(--gold);"></i>
+                    <h2>Our Vision</h2>
+                    <p>A society where all young people lead independent, dignified, and healthy lives, especially those from informal settlement communities.</p>
+                </div>
+            </div>
+
+            <div class="programs-header">
+                <h2>What We Do</h2>
+                <p>Equipping youth with practical skills for sustainable pathways.</p>
+            </div>
+
+            <div class="program-graphics">
+                <div class="prog-card">
+                    <i class="fas fa-scissors"></i>
+                    <h4>Fashion & Design</h4>
+                    <p>Professional tailoring and fashion design training for creative economic independence.</p>
+                </div>
+                <div class="prog-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>ICT & Digital Literacy</h4>
+                    <p>Equipping youth with the tools to navigate and succeed in the modern digital economy.</p>
+                </div>
+                <div class="prog-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4>Health & Well-being</h4>
+                    <p>Comprehensive health education, mentorship, and advocacy for a healthier future.</p>
+                </div>
+                <div class="prog-card">
+                    <i class="fas fa-cut"></i>
+                    <h4>Hairdressing</h4>
+                    <p>Practical beauty and hairdressing skills to foster self-reliance and entrepreneurship.</p>
+                </div>
+                <div class="prog-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Mentorship</h4>
+                    <p>Connecting experienced leaders with youth to build foundations of hope and transformation.</p>
+                </div>
+                <div class="prog-card">
+                    <i class="fas fa-fist-raised"></i>
+                    <h4>Advocacy</h4>
+                    <p>Driving community-driven solutions and policy influence for informal settlements.</p>
+                </div>
+            </div>
+
+            <div style="background: var(--maroon); color: white; padding: 40px; border-radius: 20px; text-align: center;">
+                <h3>Our Geographic Reach</h3>
+                <p>Headquartered in <strong>Nairobi</strong>, with active operations in <strong>Kisumu, Uasin Gishu, and Mombasa</strong> counties.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone-alt"></i> 0748432400</p>
+                <p><i class="fas fa-envelope"></i> info@hopeksai.org</p>
+                <p><i class="fas fa-globe"></i> www.hopeksai.org</p>
+            </div>
+            <div class="footer-col">
+                <h4>Transparency</h4>
+                <p>Registered NGO since April 30th, 2020. Committed to accountability and community-driven impact.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Join our mission to transform lives in Kenya's informal settlements.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
