@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | HKSAI Leadership</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --maroon: #800000;
+            --gold: #D4AF37;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('H1.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* --- HEADER --- */
+        header.portal-header {
+            background: var(--maroon);
+            padding: 25px 5%;
+            border-bottom: 5px solid var(--gold);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-title { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin-bottom: 15px; }
+        
+        nav.main-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+        nav.main-nav a {
+            color: white; text-decoration: none; font-weight: 600; text-transform: uppercase;
+            font-size: 0.8rem; padding: 10px 15px; transition: 0.3s;
+        }
+        nav.main-nav a:hover { color: var(--gold); }
+
+        /* --- STAFF SECTION --- */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        .team-card-container {
+            background: var(--glass);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .section-intro { text-align: center; margin-bottom: 50px; }
+        .section-intro h1 { color: var(--maroon); font-size: 2.5rem; margin: 0; }
+        .divider { width: 80px; height: 4px; background: var(--gold); margin: 20px auto; }
+
+        /* --- STAFF GRID --- */
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .staff-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .staff-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+
+        .staff-photo {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background: #f4f4f4;
+        }
+
+        .staff-info { padding: 20px; }
+        .staff-info h3 { margin: 10px 0 5px; color: var(--maroon); font-size: 1.2rem; }
+        .staff-info p { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 15px; }
+        
+        .staff-contact {
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* --- MILESTONE SECTION --- */
+        .milestone-box {
+            margin-top: 60px;
+            background: #fff9e6;
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 10px solid var(--maroon);
+        }
+
+        @media (max-width: 768px) {
+            .staff-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="portal-header">
+        <div class="header-title">HKSAI Leadership Portal</div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="board.html">Board Members</a>
+            <a href="dashboard.html">Staff Portfolio</a>
+            <a href="programs.html">Programs</a>
+            <a href="gallery.html">Media Centre</a>
+            <a href="donate.html" style="border: 1px solid var(--gold); color: var(--gold);">Donate Now</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="team-card-container">
+            
+            <div class="section-intro">
+                <h1>Our Secretariat & Staff</h1>
+                <p>The dedicated professionals driving the HKSAI 2030 Strategic Plan.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="staff-grid">
+                
+                <div class="staff-card">
+                    <img src="melvine.jpg" class="staff-photo" alt="Melvine Ouyo">
+                    <div class="staff-info">
+                        <h3>Melvine Ouyo</h3>
+                        <p>Executive Director</p>
+                        <div class="staff-contact">Harvard Kennedy School Alumna | Public Health Expert</div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="brendak.jpg" class="staff-photo" alt="Brenda Kiprop">
+                    <div class="staff-info">
+                        <h3>Brenda Kiprop</h3>
+                        <p>Programs & Operations Lead</p>
+                        <div class="staff-contact">Strategic Implementation & Stakeholder Coordination</div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="chrispinus.jpg" class="staff-photo" alt="Chrispinus Isindu">
+                    <div class="staff-info">
+                        <h3>Chrispinus Isindu</h3>
+                        <p>Finance Manager</p>
+                        <div class="staff-contact">Financial Accountability & Grants Management</div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="brendar.jpg" class="staff-photo" alt="Brenda Robi">
+                    <div class="staff-info">
+                        <h3>Brenda Robi</h3>
+                        <p>Project Officer</p>
+                        <div class="staff-contact">Field Operations & Community Engagement</div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="sharon.jpg" class="staff-photo" alt="Sharon Barasa">
+                    <div class="staff-info">
+                        <h3>Sharon Barasa</h3>
+                        <p>Front Office Assistant</p>
+                        <div class="staff-contact">Administrative Support & Donor Relations</div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="timothy.jpg" class="staff-photo" alt="Timothy Wesonga">
+                    <div class="staff-info">
+                        <h3>Timothy Wesonga</h3>
+                        <p>ICT Intern</p>
+                        <div class="staff-contact">Digital Literacy & Systems Maintenance</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="milestone-box">
+                <h2 style="color: var(--maroon); margin-top: 0;">Institutional Milestones</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4 style="color: var(--gold); margin-bottom: 5px;">Heron Hotel Launch</h4>
+                        <p style="font-size: 0.9rem;">Official unveiling of the 2030 Strategic Plan with support from Population Connection.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--gold); margin-bottom: 5px;">Annual General Meeting</h4>
+                        <p style="font-size: 0.9rem;">Review of our MEL frameworks and financial growth targets for the upcoming fiscal year.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer style="background: var(--maroon); color: white; padding: 40px; text-align: center; border-top: 5px solid var(--gold);">
+        <p>© 2025 Hope for Kenya Slum Adolescents Initiative (HKSAI)</p>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Empowering Youth in Nairobi, Kisumu, Uasin Gishu, and Mombasa.</p>
+    </footer>
+
+</body>
+</html>
