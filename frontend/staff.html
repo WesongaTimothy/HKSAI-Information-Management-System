@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership Portfolio | HKSAI 2030</title>
+    <title>Staff & Milestones | HKSAI Leadership</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -35,57 +35,77 @@
 
         .header-title { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin-bottom: 15px; }
         nav.main-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
-        nav.main-nav a { color: white; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; padding: 10px 15px; }
-        nav.main-nav a:hover { color: var(--gold); }
+        nav.main-nav a { color: white; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; padding: 10px 15px; transition: 0.3s; }
+        nav.main-nav a:hover { color: var(--gold); background: rgba(255,255,255,0.1); }
 
         .container { max-width: 1300px; margin: 40px auto; padding: 0 20px; }
         .content-card { background: var(--glass); padding: 60px 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
 
-        /* --- MILESTONE EVENTS GRID --- */
+        /* --- STAFF SECTION --- */
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h1 { color: var(--maroon); font-size: 2.5rem; text-transform: uppercase; margin: 0; }
+        .divider { width: 80px; height: 4px; background: var(--gold); margin: 15px auto; }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .staff-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .staff-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .staff-photo { width: 100%; height: 350px; object-fit: cover; }
+        
+        .staff-info { padding: 25px; flex-grow: 1; }
+        .staff-info h3 { margin: 0 0 5px; color: var(--maroon); font-size: 1.4rem; font-weight: 800; }
+        .staff-title { color: var(--gold); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
+        
+        .staff-role-desc { 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            color: #555; 
+            border-top: 1px solid #f0f0f0; 
+            padding-top: 15px;
+        }
+
+        /* --- EVENTS SECTION --- */
+        .event-section-title { text-align: center; color: var(--maroon); font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; font-weight: 900; }
+        
         .event-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin-bottom: 60px;
         }
 
         .event-card {
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            border-bottom: 5px solid var(--gold);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .event-img { width: 100%; height: 350px; object-fit: cover; }
-        .event-body { padding: 30px; }
-        .event-body h2 { color: var(--maroon); margin: 0 0 10px; font-size: 1.5rem; }
-        .event-body p { color: #555; line-height: 1.6; }
+        .event-img { width: 100%; height: 450px; object-fit: cover; }
+        .event-body { padding: 40px; border-top: 6px solid var(--gold); }
+        .event-body h2 { color: var(--maroon); margin: 0 0 15px; font-size: 1.8rem; }
+        .event-body p { color: #555; line-height: 1.8; font-size: 1.05rem; }
 
-        /* --- STAFF GRID --- */
-        .staff-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+        /* --- FOOTER --- */
+        footer { background: var(--maroon); color: white; padding: 60px 20px; text-align: center; margin-top: 60px; border-top: 8px solid var(--gold); }
+
+        @media (max-width: 900px) {
+            .event-grid { grid-template-columns: 1fr; }
+            .staff-grid { grid-template-columns: 1fr; }
         }
-
-        .staff-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            text-align: center;
-            transition: 0.3s;
-            border: 1px solid #eee;
-        }
-
-        .staff-card:hover { transform: translateY(-5px); border-color: var(--gold); }
-        .staff-photo { width: 100%; height: 300px; object-fit: cover; }
-        .staff-info { padding: 20px; }
-        .staff-info h3 { margin: 10px 0 5px; color: var(--maroon); font-size: 1.1rem; }
-        .staff-info p { color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; }
-
-        footer { background: var(--maroon); color: white; padding: 40px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -106,10 +126,83 @@
     <div class="container">
         <div class="content-card">
             
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h1 style="color: var(--maroon); font-size: 2.5rem; margin: 0;">Institutional Milestones</h1>
-                <p>Scaling Impact: From the 2030 Strategy Launch to our Annual Governance Reviews.</p>
+            <div class="section-header">
+                <h1>Our Dedicated Secretariat</h1>
+                <p>Leading the execution of HKSAI's 2030 Strategic Vision.</p>
+                <div class="divider"></div>
             </div>
+
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img src="EM.png" class="staff-photo" alt="Melvine Ouyo">
+                    <div class="staff-info">
+                        <h3>Melvine Ouyo</h3>
+                        <div class="staff-title">Executive Director</div>
+                        <div class="staff-role-desc">
+                            Provides strategic leadership, oversees global partnerships, and ensures organizational alignment with HKSAI's mission and the 2030 roadmap.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="EM.png" class="staff-photo" alt="Brenda Kiprop">
+                    <div class="staff-info">
+                        <h3>Brenda Kiprop</h3>
+                        <div class="staff-title">Programs & Operations Lead</div>
+                        <div class="staff-role-desc">
+                            Directs the implementation of education and health programs, manages field operations, and coordinates stakeholder engagement.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="EM.png" class="staff-photo" alt="Chrispinus Isindu">
+                    <div class="staff-info">
+                        <h3>Chrispinus Isindu</h3>
+                        <div class="staff-title">Finance Manager</div>
+                        <div class="staff-role-desc">
+                            Oversees financial management, budgeting, and compliance, ensuring the organization meets its sustainability and reserve targets.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="EM.png" class="staff-photo" alt="Brenda Robi">
+                    <div class="staff-info">
+                        <h3>Brenda Robi</h3>
+                        <div class="staff-title">Project Officer</div>
+                        <div class="staff-role-desc">
+                            Facilitates day-to-day project activities, community mobilization, and data collection for program monitoring and evaluation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="EM.png" class="staff-photo" alt="Sharon Barasa">
+                    <div class="staff-info">
+                        <h3>Sharon Barasa</h3>
+                        <div class="staff-title">Front Office Assistant</div>
+                        <div class="staff-role-desc">
+                            Manages administrative workflows, front-line communication, and provides logistical support for the secretariat.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <img src="EM.png" class="staff-photo" alt="Timothy Wesonga">
+                    <div class="staff-info">
+                        <h3>Timothy Wesonga</h3>
+                        <div class="staff-title">ICT Intern</div>
+                        <div class="staff-role-desc">
+                            Supports digital literacy initiatives, maintains organizational IT systems, and assists in digital content management.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 60px;">
+
+            <div class="event-section-title">Institutional Milestones</div>
 
             <div class="event-grid">
                 <div class="event-card">
@@ -117,7 +210,7 @@
                     <div class="event-body">
                         <h2>2030 Strategy Launch</h2>
                         <p><strong>Venue:</strong> Heron Hotel, Nairobi</p>
-                        <p>Official unveiling of our 5-year roadmap with partners from Rosedale Green and Population Connection. This plan marks our commitment to reaching 40,000 youth by 2030.</p>
+                        <p>The formal launch of our 2030 Strategic Plan, developed with support from Population Connection. This event gathered key allies to pledge support for youth empowerment in Kenya.</p>
                     </div>
                 </div>
 
@@ -125,46 +218,9 @@
                     <img src="H1.jpeg" class="event-img" alt="Annual General Meeting">
                     <div class="event-body">
                         <h2>Annual General Meeting (AGM)</h2>
-                        <p><strong>Focus:</strong> Transparency & Accountability</p>
-                        <p>Our annual review of financial statements, MEL frameworks, and community impact data to ensure we remain a trusted anchor for Kenya's informal settlements.</p>
+                        <p><strong>Focus:</strong> Strategy & Accountability</p>
+                        <p>A high-level session where our board and staff review progress against our core pillars: Organizational Capacity, Programs, Partnerships, and Finance.</p>
                     </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin: 80px 0 40px;">
-                <h2 style="color: var(--maroon); font-size: 2rem; text-transform: uppercase;">Our Dedicated Secretariat</h2>
-                <div style="width: 80px; height: 4px; background: var(--gold); margin: 10px auto;"></div>
-            </div>
-
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <img src="EM.png" class="staff-photo" alt="Melvine Ouyo">
-                    <div class="staff-info"><h3>Melvine Ouyo</h3><p>Executive Director</p></div>
-                </div>
-
-                <div class="staff-card">
-                    <img src="EM.png" class="staff-photo" alt="Brenda Kiprop">
-                    <div class="staff-info"><h3>Brenda Kiprop</h3><p>Programs & Operations Lead</p></div>
-                </div>
-
-                <div class="staff-card">
-                    <img src="EM.png" class="staff-photo" alt="Chrispinus Isindu">
-                    <div class="staff-info"><h3>Chrispinus Isindu</h3><p>Finance Manager</p></div>
-                </div>
-
-                <div class="staff-card">
-                    <img src="EM.png" class="staff-photo" alt="Brenda Robi">
-                    <div class="staff-info"><h3>Brenda Robi</h3><p>Project Officer</p></div>
-                </div>
-
-                <div class="staff-card">
-                    <img src="EM.png" class="staff-photo" alt="Sharon Barasa">
-                    <div class="staff-info"><h3>Sharon Barasa</h3><p>Front Office Assistant</p></div>
-                </div>
-
-                <div class="staff-card">
-                    <img src="EM.png" class="staff-photo" alt="Timothy Wesonga">
-                    <div class="staff-info"><h3>Timothy Wesonga</h3><p>ICT Intern</p></div>
                 </div>
             </div>
 
@@ -173,7 +229,7 @@
 
     <footer>
         <p>© 2025 Hope for Kenya Slum Adolescents Initiative (HKSAI)</p>
-        <p style="font-size: 0.8rem; opacity: 0.7;">Rooted in Community • Driven by Excellence</p>
+        <p style="font-size: 0.8rem; opacity: 0.7; letter-spacing: 1px;">Dignity • Resilience • Opportunity</p>
     </footer>
 
 </body>
